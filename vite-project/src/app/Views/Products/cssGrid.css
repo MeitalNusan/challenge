@@ -1,0 +1,24 @@
+.moviesGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,230px);
+    gap:40px;
+    padding: 40px;
+    justify-content: center;
+  }
+  .title{
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.253);
+  }
+
+
+  @media (max-width:600px) {
+    .moviesGrid{
+        margin-top: 10px;
+        grid-template-columns: 100%;
+    }
+    
+    
+  }
