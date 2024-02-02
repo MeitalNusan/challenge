@@ -1,5 +1,5 @@
 #root,html,body{
-  background: linear-gradient(grey, rgba(255, 192, 203, 0.034));
+  background: linear-gradient(red, rgba(255, 192, 203, 0));
   place-items: center;
   min-width: 100%;
   min-height: 100vh;
