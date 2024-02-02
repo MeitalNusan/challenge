@@ -14,6 +14,7 @@ const deportesCollection = collection(db, "Deportes")
 
 const getDeportes = async () =>{
     const data = await getDocs(deportesCollection)
+    console.log(data.docs)
 }
 
     return (

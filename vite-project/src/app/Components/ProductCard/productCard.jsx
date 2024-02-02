@@ -6,7 +6,7 @@ export const ProductCard = ({producto}) => {
     return (
       <div className="moviesCard">
         <Link to={`/product/${producto.id}`}><img className="movieImage" src={producto.image} />
-        <h2>Nombre: {producto.name}</h2>
+        <p>Nombre: {producto.name}</p>
         <p>Genero: {producto.gender}</p>
         </Link>
       </div>
