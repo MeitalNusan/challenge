@@ -15,10 +15,11 @@ function Nav  () {
         <div className="nav">
                
                 <div className="item1">
-                  <button class="btn btn-light"><Link className="botones" to="/">Inicio</Link></button>
-                   <button class="btn btn-light"><Link className="botones" to="/products">Products </Link></button>
-                   <button class="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
-                   <button class="btn btn-light"><Link className="botones" to="/edit">Editar </Link></button>
+                  <button className="btn btn-light"><Link className="botones" to="/">Inicio</Link></button>
+                   <button className="btn btn-light"><Link className="botones" to="/products">Products </Link></button>
+                   <button className="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
+                   <button className="btn btn-light"><Link className="botones" to="/edit">Editar </Link></button>
+                   <button className="btn btn-light"><Link className="botones" to="/show">Show </Link></button>
                 </div>  
  
                 <div className="item2" >

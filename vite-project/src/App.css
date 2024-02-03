@@ -1,27 +1,24 @@
 #root,html,body{
-  background-color: rgba(0, 0, 0, 0.575);
-  background-image: url("../src/app/img/5779.jpg");
+    background-image: url("../src/app/img/5779.jpg");
   background-repeat: no-repeat;
   place-items: center;
   min-width: 100%;
   min-height: 100vh;
-  font-weight: 400;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+   font-family:Georgia, 'Times New Roman', Times, serif;
   width: 100%;
  }
 
   /*.........BODY........*/
-  p{
-  color:white;
-}
-
+   
 body{
-  filter: grayscale(90%);
+  filter: grayscale(70%);
+  background:linear-gradient(to right,rgb(110,110, 110),rgba(0, 0, 0, 0.580),rgba(0, 0, 0, 0.640)); 
+
    
 }
 
 .home{
-   height: 1000px;
+   /* height: 940px; */
 
 }
 
@@ -39,28 +36,28 @@ body{
   gap:10px;
   margin: 10px;
   margin-left: 20px;
-  color:red;
+  color:black;
 }
 .item2{
-  margin-right: 20px;
-   
-  color: white;
-
+  margin-right: 30px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  
 }
 .tituloHome{
-  color:whitesmoke;
-  text-decoration: none;
- 
+   text-decoration: none;
+  /* filter: grayscale(90%); */
+  color:black;
+  
 }
 
 
 .botones{
   text-decoration: none; 
-  font-size: large;
+  color:black;
+  font-size:larger;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
-
 .imgNav{
   margin-left: 800px;
   padding: 0;
@@ -88,8 +85,8 @@ body{
     margin: 2px;
     
   }
+
   .botones{
-    color:black;
     font-weight:bolder;
     font-size: small;
     font-family:Arial, Helvetica, sans-serif;

@@ -17,6 +17,8 @@ const getDeportes = async () =>{
     console.log(data.docs)
 }
 
+getDeportes()
+
     return (
         <h1>Mostrar datos</h1>
     )
