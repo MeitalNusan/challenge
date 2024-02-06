@@ -1,5 +1,6 @@
 #root,html,body{
     background-image: url("../src/app/img/5779.jpg");
+    height: 960px;
   background-repeat: no-repeat;
   place-items: center;
   min-width: 100%;
@@ -13,15 +14,8 @@
 body{
   filter: grayscale(70%);
   background:linear-gradient(to right,rgb(110,110, 110),rgba(0, 0, 0, 0.580),rgba(0, 0, 0, 0.640)); 
-
    
 }
-
-.home{
-   /* height: 940px; */
-
-}
-
 
 /*..................NAV...................*/
 
@@ -79,11 +73,20 @@ body{
     height: auto;
     display: flex;
   }
+  #root,html,body{
+    height:0px;
+ }
 
   .item1{
-    gap:4px;
+    gap:3px;
     margin: 2px;
     
+  }
+  .item2{
+    margin-right: 20px;
+    margin-right: 1px;
+
+  
   }
 
   .botones{
