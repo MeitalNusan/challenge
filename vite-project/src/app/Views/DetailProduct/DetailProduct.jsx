@@ -27,7 +27,7 @@ const {id} = useParams()
     return(
 
         <div className="containerDetail">
-         <img className="col" src={product.image} alt="" />
+         <img className="colDetail" src={product.image} alt="" />
          {/* <h1>{product.name}</h1> */}
          
          <div className="productDetail col">

@@ -52,14 +52,14 @@ const confirmarDelete = (id) =>{
 
 useEffect(()=>{
     getDeportes()
-},[])
+},[deportes])
 
 
     return (
        <div className="container">
         <div className="row">
-            <div className="col">
-                 <div /*className="d-grid gap-2"*/> 
+            <div className="col-4">
+                  <div /*className="d-grid gap-2"*/>  
                     <Link to="/create" className="btn btn-primary">Crear</Link>
                 </div>
 
