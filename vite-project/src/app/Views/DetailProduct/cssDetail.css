@@ -4,16 +4,17 @@
    flex-wrap: wrap; 
 }
 
-.col{
-    
-    max-width: 400px;
+.colDetail{
+    max-width: 300px;
     margin: 15px;
     margin-top: 60px;
     height: auto;
     width: 80%;
     border-radius: 15px;
 }
-
+.item{
+    margin-top: 60px;
+}
 .productDetail{
     font-size: 1.5rem;
 }

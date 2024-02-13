@@ -1,5 +1,6 @@
 #root,html,body{
     background-image: url("../src/app/img/5779.jpg");
+    height: 960px;
   background-repeat: no-repeat;
   place-items: center;
   min-width: 100%;
@@ -18,7 +19,7 @@ body{
 }
 
 .home{
-   height: 940px;
+   /* height: 940px; */
 
 }
 
@@ -57,14 +58,15 @@ body{
   color:black;
   font-size:larger;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 10px;
 }
-.imgNav{
+/* .imgNav{
   margin-left: 800px;
   padding: 0;
   width: 60px;
   position: absolute;
   
-}
+} */
 
 
 /* ................RESPONSIVE................ */
@@ -79,11 +81,20 @@ body{
     height: auto;
     display: flex;
   }
+  #root,html,body{
+    height:0px;
+ }
 
   .item1{
-    gap:4px;
+    gap:3px;
     margin: 2px;
     
+  }
+  .item2{
+    margin-right: 20px;
+    margin-right: 1px;
+
+  
   }
 
   .botones{
