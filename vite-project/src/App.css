@@ -18,7 +18,7 @@ body{
 }
 
 .home{
-   /* height: 940px; */
+   height: 940px;
 
 }
 
@@ -39,7 +39,7 @@ body{
   color:black;
 }
 .item2{
-  margin-right: 30px;
+  margin-right: 20px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   
