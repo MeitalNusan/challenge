@@ -2,6 +2,10 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import {collection,getDocs, deleteDoc,doc} from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
+import { imageDb } from "../../firebase/firebase.js"
+import { ref, uploadBytes } from "firebase/storage"
+import { v4 } from "uuid"
+import { FirebaseImageUpload } from "../../Components/imagenes/images.jsx"
 
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
@@ -10,12 +14,13 @@ const mySwal = withReactContent(Swal)
 export const Show = () =>{
 const [deportes, setDeportes] =useState([])
 
+
+
 const deportesCollection = collection(db, "Deportes")
 
 const getDeportes = async () =>{
     const data = await getDocs(deportesCollection)
-    // console.log(data.docs)
-setDeportes(
+ setDeportes(
     data.docs.map((doc)=>({...doc.data(),id:doc.id}))
 )}
 
@@ -55,6 +60,10 @@ useEffect(()=>{
 },[deportes])
 
 
+//............Imagenes.................//
+
+
+
     return (
        <div className="container">
         <div className="row">
@@ -85,13 +94,11 @@ useEffect(()=>{
                         <button className="btn btn-danger" onClick={()=> confirmarDelete(deporte.id)}><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
-            ))}
-
-
-                        
+            ))}   
                     </tbody>
                 </table>
             </div>
+            <FirebaseImageUpload/>
         </div>
        </div>
     )

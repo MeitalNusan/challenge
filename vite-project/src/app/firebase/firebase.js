@@ -1,7 +1,9 @@
 // Import the functions you need from the SDKs you need
+import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore"
-import { getStorage } from "firebase/storage" 
+import { listAll, getStorage, ref, uploadBytes } from "firebase/storage" 
+import {v4} from 'uuid'
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,5 +22,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export const storage = getStorage(app)
+export const imageDb= getStorage(app)
+
+
 export const db = getFirestore(app)
+ 

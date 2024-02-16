@@ -6,11 +6,14 @@ import { Layout } from "./app/Components/Layout/Layout"
 import { Show } from "./app/Views/Show/Show"
 import { Create } from "./app/Views/Create/Create"
 import { Edit } from "./app/Views//Edit/Edit"
+import { FirebaseImageUpload } from "./app/Components/imagenes/images"
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export const App = () => {
 
   return (
+    <>
+  
     <div className="app">
       <BrowserRouter>
              <Routes>   
@@ -21,14 +24,14 @@ export const App = () => {
                     <Route path="/show" element={<Show />} />
                     <Route path="/create" element={<Create />} />
                     <Route path="/edit/:id" element={<Edit />} />
+                    <Route path="/imagenes" element={< FirebaseImageUpload />} />
                   </Route>
             </Routes>
       </BrowserRouter>
     </div>
     
+    </>
     
-    
-   
   )
 }
 

@@ -2,13 +2,14 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
-
+ 
 
 
 export const Create = () =>{
     const [deporte, setDeporte] = useState("")
     const [marca, setMarca] = useState("")
     const [prenda, setPrenda] = useState("")
+    // const [file, setFile] = useState(null)
 
     const navigate = useNavigate()  
     
@@ -27,14 +28,14 @@ export const Create = () =>{
     })
     navigate("/show")
     }
-    
+     
 
     return (
       <div className="container">
             <h1>Crear</h1>
             <div className="row">
                 <div className="col-3">
-                    <form onSubmit={createDeporte}>
+                    <form onSubmit={createDeporte} >
                         <div className="mb-3">
                               <label className="form-label">Deporte:</label>
                               <input
@@ -59,6 +60,8 @@ export const Create = () =>{
                               placeholder="prenda"
                                />
                         </div>
+                        
+                        <br /><br />
                         <button type="submit" className="btn btn-primary">Crear</button>
                        <Link className="btn btn-danger" to="/show">Cancelar</Link>
                     </form>

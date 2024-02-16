@@ -20,6 +20,7 @@ function Nav  () {
                    <button className="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
                    <button className="btn btn-light"><Link className="botones" to="/edit">Editar </Link></button>
                    <button className="btn btn-light"><Link className="botones" to="/show">Show </Link></button>
+                   <button className="btn btn-light"><Link className="botones" to="/imagenes">Imagenes </Link></button>
                 </div>  
  
                 <div className="item2" >
