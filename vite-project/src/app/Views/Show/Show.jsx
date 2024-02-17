@@ -98,7 +98,6 @@ useEffect(()=>{
                     </tbody>
                 </table>
             </div>
-            <FirebaseImageUpload/>
         </div>
        </div>
     )

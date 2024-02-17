@@ -2,6 +2,8 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
+import { FirebaseImageUpload } from "../../Components/imagenes/images.jsx"
+
  
 
 
@@ -9,7 +11,7 @@ export const Create = () =>{
     const [deporte, setDeporte] = useState("")
     const [marca, setMarca] = useState("")
     const [prenda, setPrenda] = useState("")
-    // const [file, setFile] = useState(null)
+    const [image, setImage] = useState("")
 
     const navigate = useNavigate()  
     
@@ -23,7 +25,8 @@ export const Create = () =>{
         await addDoc(deportesCollection, {
             deporte: deporte,
             marca: marca,
-            prenda: prenda
+            prenda: prenda,
+            image: image
 
     })
     navigate("/show")
@@ -52,6 +55,7 @@ export const Create = () =>{
                               type="text"
                               placeholder="marca"
                                />
+                                <br />
                               <label className="form-label">Prenda:</label>
                                <input
                               onChange={(e) =>setPrenda(e.target.value)}
@@ -59,9 +63,10 @@ export const Create = () =>{
                               type="text"
                               placeholder="prenda"
                                />
+                               <br />
+                              <label className="form-label">Subir imagen:</label>
+                              <FirebaseImageUpload/>
                         </div>
-                        
-                        <br /><br />
                         <button type="submit" className="btn btn-primary">Crear</button>
                        <Link className="btn btn-danger" to="/show">Cancelar</Link>
                     </form>
