@@ -1,48 +1,78 @@
-import { useState } from "react"
+// import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { collection, addDoc } from "firebase/firestore"
-import { db } from "../../firebase/firebase.js"
-import { FirebaseImageUpload } from "../../Components/imagenes/images.jsx"
-
+import { db, imageDb } from "../../firebase/firebase"
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
+import { v4 } from "uuid"
  
 
 
+
 export const Create = () =>{
-    const [deporte, setDeporte] = useState("")
-    const [marca, setMarca] = useState("")
-    const [prenda, setPrenda] = useState("")
-    const [image, setImage] = useState("")
+    // const [deporte, setDeporte] = useState("")
+    // const [marca, setMarca] = useState("")
+    // const [prenda, setPrenda] = useState("")
+    // const [img, setImg] = useState("")
+    // const [imgUrl, setImgUrl ] = useState([])
 
-    const navigate = useNavigate()  
     
-    //a que base de datos le creo esto
-    const deportesCollection = collection(db, "Deportes")
+    const navigate = useNavigate()  
 
-    //funcion para crear heroe
-    const createDeporte = async (e)=>{
+    let urlImage;
+
+    const guardarInfo = async(e)=>{
         e.preventDefault();
-        
-        await addDoc(deportesCollection, {
-            deporte: deporte,
-            marca: marca,
-            prenda: prenda,
-            image: image
 
-    })
-    navigate("/show")
+     const deporte = e.target.deporte.value;   
+     const marca = e.target.marca.value;   
+     const prenda = e.target.prenda.value;   
+    
+     const newDeporte = {
+         deporte: deporte,
+         marca: marca,
+         prenda: prenda,
+         image:urlImage
+      }
+
+   
+    try{
+        await addDoc(collection(db, "Deportes"), {
+            ...newDeporte
+        })
+    } catch (error) {
+        console.log(error)
+
     }
-     
+    e.target.deporte.value = '';
+    e.target.marca.value = '';
+    e.target.prenda.value = '';
+    e.target.file.value= '';
+
+}
+
+
+    
+
+const fileHandler = async (e) =>{
+    const archivoI = e.target.files[0];
+    const refArchivo = ref(imageDb,`files/${v4()}`)
+    await uploadBytes(refArchivo, archivoI)
+    urlImage = await getDownloadURL(refArchivo)
+    navigate("/show")
+}
+
+
+// useEffect(()=>{
+//        guardarInfo()
+//     },[])
 
     return (
       <div className="container">
             <h1>Crear</h1>
-            <div className="row">
-                <div className="col-3">
-                    <form onSubmit={createDeporte} >
-                        <div className="mb-3">
+                    <form onSubmit={guardarInfo}>
                               <label className="form-label">Deporte:</label>
                               <input
-                              onChange={(e) =>setDeporte(e.target.value)}
+                            
                               className="form-control"
                               type="text"
                               placeholder="deporte"
@@ -50,7 +80,7 @@ export const Create = () =>{
                                <br />
                               <label className="form-label">Marca:</label>
                                <input
-                              onChange={(e) =>setMarca(e.target.value)}
+                             
                               className="form-control"
                               type="text"
                               placeholder="marca"
@@ -58,20 +88,23 @@ export const Create = () =>{
                                 <br />
                               <label className="form-label">Prenda:</label>
                                <input
-                              onChange={(e) =>setPrenda(e.target.value)}
+                           
                               className="form-control"
                               type="text"
                               placeholder="prenda"
                                />
                                <br />
                               <label className="form-label">Subir imagen:</label>
-                              <FirebaseImageUpload/>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Crear</button>
-                       <Link className="btn btn-danger" to="/show">Cancelar</Link>
+                              <input type="file" onChange={fileHandler} />
+                           
+                              <button type="submit" className="btn btn-primary">Crear</button>
+                              <Link className="btn btn-danger" to="/show">Cancelar</Link>
                     </form>
-                </div>
-            </div>
-        </div>      
+        </div>
+           
     )
+
 }
+
+
+

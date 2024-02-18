@@ -10,15 +10,20 @@ export const FirebaseImageUpload = () => {
     const [img, setImg] = useState("")
     const [imgUrl, setImgUrl ] = useState([])
 
+
     const handleClick = () =>{
         if(img !==null){
      const imageRef = ref(imageDb, `files/${v4()}`)
    uploadBytes(imageRef, img).then(value=>{
     console.log(value)
+    
    })
     }
 
  }
+ 
+
+ 
     useEffect(()=>{
         listAll(ref(imageDb, "files")).then(imgs =>{
             console.log(imgs)
