@@ -10,20 +10,15 @@ export const FirebaseImageUpload = () => {
     const [img, setImg] = useState("")
     const [imgUrl, setImgUrl ] = useState([])
 
-
     const handleClick = () =>{
         if(img !==null){
      const imageRef = ref(imageDb, `files/${v4()}`)
    uploadBytes(imageRef, img).then(value=>{
     console.log(value)
-    
    })
     }
 
  }
- 
-
- 
     useEffect(()=>{
         listAll(ref(imageDb, "files")).then(imgs =>{
             console.log(imgs)
@@ -40,7 +35,7 @@ console.log(imgUrl, "imgUrl")
 
     return(
         <div>
-            <input type="file" onChange={(e) =>setImg(e.target.files[0])} />
+            {/* <input type="file" onChange={(e) =>setImg(e.target.files[0])} />
              <button onClick={handleClick}>Upload</button>
 
              {
@@ -49,7 +44,8 @@ console.log(imgUrl, "imgUrl")
                     <img src={dataVal} height="200px" width="200px"/>
                      
                 </div>)
-             }
+             } */}
+             <h1>hola</h1>
         </div>
     )
 }
