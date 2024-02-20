@@ -65,40 +65,37 @@ useEffect(()=>{
 
 
     return (
-       <div className="container">
-        <div className="row">
-            <div className="col-4">
+       <div>
                   <div /*className="d-grid gap-2"*/>  
                     <Link to="/create" className="btn btn-primary">Crear</Link>
                 </div>
 
-                <table className="table table-dark table-hover">
+                <table className="table table-hover">
                     <thead>
                         <tr>
                             <th>Deporte</th>
                             <th>Marca</th>
                             <th>Prenda</th>
+                            <th>Imagenes</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
 
                     <tbody>
-
-            {deportes.map((deporte)=>(
-                <tr>
-                    <td>{deporte.deporte}</td>
-                    <td>{deporte.marca}</td>
-                    <td>{deporte.prenda}</td>
-                    <td>
-                        <Link to={`/edit/${deporte.id}`} className="btn btn-light"><i class="fa-solid fa-pen-to-square"></i></Link>
-                        <button className="btn btn-danger" onClick={()=> confirmarDelete(deporte.id)}><i class="fa-solid fa-trash"></i></button>
-                    </td>
-                </tr>
+                {deportes.map((deporte)=>(
+                    <tr key={deporte.id}>
+                        <td>{deporte.deporte}</td>
+                        <td>{deporte.marca}</td>
+                        <td>{deporte.prenda}</td>
+                        <td><img height={150} width={200} src={deporte.img}/></td>
+                        <td>
+                            <Link to={`/edit/${deporte.id}`} className="btn btn-light"><i className="fa-solid fa-pen-to-square"></i></Link>
+                            <button className="btn btn-danger" onClick={()=> confirmarDelete(deporte.id)}><i className="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
             ))}   
                     </tbody>
                 </table>
             </div>
-        </div>
-       </div>
     )
 } 

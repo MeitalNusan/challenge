@@ -7,13 +7,13 @@ import { listAll } from "firebase/storage"
 
 
 export const FirebaseImageUpload = () => {
-    const [img, setImg] = useState("")
+    const [imag, setImg] = useState("")
     const [imgUrl, setImgUrl ] = useState([])
 
     const handleClick = () =>{
-        if(img !==null){
+        if(imag !==null){
      const imageRef = ref(imageDb, `files/${v4()}`)
-   uploadBytes(imageRef, img).then(value=>{
+   uploadBytes(imageRef, imag).then(value=>{
     console.log(value)
    })
     }
