@@ -1,56 +1,81 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc } from "firebase/firestore";
 import { db, imageDb } from "../../firebase/firebase.js";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
-
+ 
 export const Create = () => {
   const navigate = useNavigate();
   const [deporte, setDeporte] = useState("");
   const [marca, setMarca] = useState("");
   const [prenda, setPrenda] = useState("");
   const [urlImDesc, setUrlImDesc] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const guardarInfo = async (e) => {
     e.preventDefault();
-
-    const newD = {
-      deporte: deporte,
-      marca: marca,
-      prenda: prenda,
-      img: urlImDesc
-    };
-
-     try {
-      await addDoc(collection(db, "Deportes"), { ...newD });
-      navigate("/show");
-    } catch (error) {
-      console.error(error);
-      // Handle error, display a message, etc.
+  
+    if (!deporte || !marca || !prenda) {
+      console.log("Please fill in all fields");
+      return;
     }
-
-    // Clear form fields after submission
-    setDeporte("");
-    setMarca("");
-    setPrenda("");
-    setUrlImDesc("");
-  };
-
+  
+    
+      const newD = {
+        deporte: deporte,
+        marca: marca,
+        prenda: prenda,
+        img:urlImDesc,
+      };
+  
+      try {
+        await addDoc(collection(db, "Deportes"), { ...newD });
+        navigate("/show");
+      } catch (error) {
+        console.error(error);
+        // Handle error, display a message, etc.
+      }
+  
+      setIsLoading(false);
+      // Clear form fields after submission
+      setDeporte("");
+      setMarca("");
+      setPrenda("");
+      setUrlImDesc("");
+    }  
+    
+  
   const fileHandler = async (e) => {
-    const archivoI = e.target.files[0];
-    const refArchivo = ref(imageDb, `documentos/${archivoI.name}`);
-    await uploadBytes(refArchivo, archivoI);
-    const imageUrl = await getDownloadURL(refArchivo);
-    setUrlImDesc(imageUrl);
-    console.log(imageUrl)
-
+    try {
+      const archivoI = e.target.files[0];
+  
+      // Check if a file is selected
+      if (!archivoI) {
+        console.error("No file selected");
+        return;
+      }
+  
+      // Check if the selected file is an image
+      if (!archivoI.type.startsWith("image/")) {
+        console.error("Invalid file type. Please select an image file.");
+        return;
+      }
+  
+      const refArchivo = ref(imageDb, `documentos/${archivoI.name}`);
+      await uploadBytes(refArchivo, archivoI);
+      const imageUrl = await getDownloadURL(refArchivo);
+      setUrlImDesc(imageUrl);
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      // Handle the error, display a message, etc.
+    }
   };
-
+  
   return (
-    <div className="container">
-      <h1>Crear</h1>
-      <form onSubmit={guardarInfo}>
+    <div>
+       <form onSubmit={guardarInfo}>
         <label className="form-label">Deporte:</label>
         <div>
           <input
@@ -96,7 +121,10 @@ export const Create = () => {
           onChange={fileHandler}
         />
 
-        <button className="btn btn-primary">Crear</button>
+        <button className="btn btn-primary" disabled={isLoading}>
+          {isLoading ? "Creating..." : "Crear"}
+        </button>      
+
         <Link className="btn btn-danger" to="/show">
           Cancelar
         </Link>

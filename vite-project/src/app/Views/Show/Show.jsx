@@ -65,37 +65,30 @@ useEffect(()=>{
 
 
     return (
-       <div>
-                  <div /*className="d-grid gap-2"*/>  
-                    <Link to="/create" className="btn btn-primary">Crear</Link>
-                </div>
-
-                <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Deporte</th>
-                            <th>Marca</th>
-                            <th>Prenda</th>
-                            <th>Imagenes</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                {deportes.map((deporte)=>(
-                    <tr key={deporte.id}>
-                        <td>{deporte.deporte}</td>
-                        <td>{deporte.marca}</td>
-                        <td>{deporte.prenda}</td>
-                        <td><img height={150} width={200} src={deporte.img}/></td>
-                        <td>
-                            <Link to={`/edit/${deporte.id}`} className="btn btn-light"><i className="fa-solid fa-pen-to-square"></i></Link>
-                            <button className="btn btn-danger" onClick={()=> confirmarDelete(deporte.id)}><i className="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-            ))}   
-                    </tbody>
-                </table>
+        <div className="contenedorGrid">
+        <div>  
+          <Link to="/create" className="btn btn-primary">Crear</Link>
+        </div>  
+          
+        <div className="gridProducts"> 
+          {deportes.map((deporte) => (
+            <div key={deporte.id}>
+              <img height={150} width={200} src={deporte.img} alt={`Image for ${deporte.deporte}`} />
+              <p>{deporte.deporte}</p>
+              <p>{deporte.marca}</p>
+              <p>{deporte.prenda}</p>
+              <p>
+                <Link to={`/edit/${deporte.id}`} className="btn btn-light">
+                  <i className="fa-solid fa-pen-to-square"></i>
+                </Link>
+                <button className="btn btn-danger" onClick={() => confirmarDelete(deporte.id)}>
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </p>
             </div>
+          ))}   
+        </div>
+      </div>
+      
     )
 } 

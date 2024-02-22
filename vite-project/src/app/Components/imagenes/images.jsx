@@ -7,31 +7,31 @@ import { listAll } from "firebase/storage"
 
 
 export const FirebaseImageUpload = () => {
-    const [imag, setImg] = useState("")
-    const [imgUrl, setImgUrl ] = useState([])
+//     const [imag, setImg] = useState("")
+//     const [imgUrl, setImgUrl ] = useState([])
 
-    const handleClick = () =>{
-        if(imag !==null){
-     const imageRef = ref(imageDb, `files/${v4()}`)
-   uploadBytes(imageRef, imag).then(value=>{
-    console.log(value)
-   })
-    }
+//     const handleClick = () =>{
+//         if(imag !==null){
+//      const imageRef = ref(imageDb, `files/${v4()}`)
+//    uploadBytes(imageRef, imag).then(value=>{
+//     console.log(value)
+//    })
+//     }
 
- }
-    useEffect(()=>{
-        listAll(ref(imageDb, "files")).then(imgs =>{
-            console.log(imgs)
-            imgs.items.forEach(val =>{
-                getDownloadURL(val).then(url=>{
-                    setImgUrl(data=>[...data, url])
+//  }
+//     useEffect(()=>{
+//         listAll(ref(imageDb, "files")).then(imgs =>{
+//             console.log(imgs)
+//             imgs.items.forEach(val =>{
+//                 getDownloadURL(val).then(url=>{
+//                     setImgUrl(data=>[...data, url])
 
-                })
-            })
-        })
-    },[])
+//                 })
+//             })
+//         })
+//     },[])
 
-console.log(imgUrl, "imgUrl")
+// console.log(imgUrl, "imgUrl")
 
     return(
         <div>

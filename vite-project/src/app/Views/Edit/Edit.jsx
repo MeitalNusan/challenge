@@ -9,6 +9,7 @@ export const Edit = () =>{
     const [deporte, setDeporte] = useState("")
     const [marca, setMarca] = useState("")
     const [prenda, setPrenda] = useState("")
+    const [img, setImg] = useState("")
 
     const navigate = useNavigate()
     const {id} = useParams()
@@ -22,6 +23,7 @@ export const Edit = () =>{
             setDeporte(deporteDoc.data().deporte)
             setMarca(deporteDoc.data().marca)
             setPrenda(deporteDoc.data().prenda)
+            setImg(deporteDoc.data().img)
          }else{
             console.log("no existe")
 
@@ -35,21 +37,62 @@ export const Edit = () =>{
 
 
 //modificar lo que busque por ID
-    const update = async (e) => {
-        e.preventDefault()
-        const deporteDoc = doc(db, "Deportes", id)
-        
-        const data = {
-            deporte:deporte,
-            marca:marca,
-            prenda:prenda
-        }
- 
-        await updateDoc(deporteDoc,data)
-        navigate("/show")
+const update = async (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!deporte || !marca || !prenda) {
+        // Display an error message or prevent form submission
+        console.log("Please fill in all fields");
+        return;
     }
 
-  
+    const deporteDoc = doc(db, "Deportes", id);
+
+    try {
+        let imgDataUrl = ""; // Initialize with an empty string
+
+        // Check if img is a valid File object
+        if (img instanceof File) {
+            // Convert File to data URL
+            imgDataUrl = await convertFileToDataUrl(img);
+        } else {
+            // Handle the case where img is not a valid File object
+            console.error("Invalid image file");
+            // You might want to display an error message to the user or handle it differently
+        }
+
+        const data = {
+            deporte: deporte,
+            marca: marca,
+            prenda: prenda,
+            img: imgDataUrl,
+        };
+
+        await updateDoc(deporteDoc, data);
+        navigate("/show");
+    } catch (error) {
+        // Handle errors, including the conversion error
+        console.error("Error updating document:", error);
+    }
+};
+// Helper function to convert File to data URL
+const convertFileToDataUrl = (file) => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            resolve(reader.result);
+        };
+
+        reader.onerror = (error) => {
+            reject(error);
+        };
+
+        reader.readAsDataURL(file);
+    });
+};
+
     return (
         <div className="container">
             <h1>Edit</h1>
@@ -79,6 +122,14 @@ export const Edit = () =>{
                               className="form-control"
                               type="text"
                                />
+                              <label className="form-label">Imagen:</label>
+                              <label className="form-label">Imagen:</label>
+                            <input
+                                onChange={(e) => setImg(e.target.files[0])}
+                                className="form-control"
+                                type="file"
+                            />
+
                         </div>
                         <button type="submit" className="btn btn-primary">Editar</button>
                        <Link className="btn btn-danger" to="/show">Cancelar</Link>
