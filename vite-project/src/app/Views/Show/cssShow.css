@@ -5,3 +5,12 @@
     padding: 40px;
     justify-content: center;
     }
+    .productos{
+        
+        list-style: none;
+        font-size: 1.5rem;
+        text-align: center;
+        color:black;
+        text-decoration: none;
+      
+    }

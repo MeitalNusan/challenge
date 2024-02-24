@@ -65,14 +65,10 @@ useEffect(()=>{
 
 
     return (
-        <div className="contenedorGrid">
-        <div>  
-          <Link to="/create" className="btn btn-primary">Crear</Link>
-        </div>  
-          
+        <div className="contenedorGrid">         
         <div className="gridProducts"> 
           {deportes.map((deporte) => (
-            <div key={deporte.id}>
+            <div className="productos" key={deporte.id}>
               <img height={150} width={200} src={deporte.img} alt={`Image for ${deporte.deporte}`} />
               <p>{deporte.deporte}</p>
               <p>{deporte.marca}</p>
