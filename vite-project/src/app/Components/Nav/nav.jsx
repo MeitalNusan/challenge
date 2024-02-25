@@ -18,10 +18,8 @@ function Nav  () {
                   <button className="btn btn-light"><Link className="botones" to="/">Inicio</Link></button>
                    <button className="btn btn-light"><Link className="botones" to="/products">Products </Link></button>
                    <button className="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
-                   <button className="btn btn-light"><Link className="botones" to="/edit">Editar </Link></button>
-                   <button className="btn btn-light"><Link className="botones" to="/show">Show </Link></button>
-                   <button className="btn btn-light"><Link className="botones" to="/imagenes">Imagenes </Link></button>
-                </div>  
+                    <button className="btn btn-light"><Link className="botones" to="/show">Show </Link></button>
+                 </div>  
  
                 <div className="item2" >
                    <Link className="tituloHome" to="/"> <h1 > ALWAYS</h1></Link>

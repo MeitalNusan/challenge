@@ -1,16 +1,34 @@
 .gridProducts{
     display: grid;
     grid-template-columns: repeat(auto-fill,230px);
-    gap:40px;
+    gap:80px;
     padding: 40px;
     justify-content: center;
     }
-    .productos{
-        
-        list-style: none;
-        font-size: 1.5rem;
-        text-align: center;
-        color:black;
-        text-decoration: none;
-      
+
+.elementos{
+    display: flex;
+    flex-direction: column;
+     
+}
+
+p{
+  font-size: 18px;
+}
+.imgProducts{
+    width: 280px;
+    height: 300px;
+}
+
+@media (max-width:600px) {
+    .gridProducts{
+        margin-top: 10px;
+        grid-template-columns: 100%;
     }
+    
+    .imgProducts{
+    width: 360px;
+    height: 380px;
+}
+  }
+

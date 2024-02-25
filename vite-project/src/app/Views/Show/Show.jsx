@@ -5,7 +5,6 @@ import { db } from "../../firebase/firebase.js"
 import { imageDb } from "../../firebase/firebase.js"
 import { ref, uploadBytes } from "firebase/storage"
 import { v4 } from "uuid"
-import { FirebaseImageUpload } from "../../Components/imagenes/images.jsx"
 
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
@@ -68,11 +67,13 @@ useEffect(()=>{
         <div className="contenedorGrid">         
         <div className="gridProducts"> 
           {deportes.map((deporte) => (
-            <div className="productos" key={deporte.id}>
-              <img height={150} width={200} src={deporte.img} alt={`Image for ${deporte.deporte}`} />
+            <div key={deporte.id}>
+              <img className="imgProducts" height={150} width={200} src={deporte.img} alt={`Image for ${deporte.deporte}`} />
+              <div className="elementos">
               <p>{deporte.deporte}</p>
               <p>{deporte.marca}</p>
-              <p>{deporte.prenda}</p>
+              <p>{deporte.prenda}</p>          
+              </div>
               <p>
                 <Link to={`/edit/${deporte.id}`} className="btn btn-light">
                   <i className="fa-solid fa-pen-to-square"></i>
