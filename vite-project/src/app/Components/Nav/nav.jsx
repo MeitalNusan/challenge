@@ -12,14 +12,31 @@ function Nav  () {
         <>
      
         
-        <div className="nav">
+        <div className="nav1">
                
                 <div className="item1">
-                  <button className="btn btn-light"><Link className="botones" to="/">Inicio</Link></button>
-                   <button className="btn btn-light"><Link className="botones" to="/products">Products </Link></button>
-                   <button className="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
+                    <button className="btn btn-light"><Link className="botones" to="/">Inicio</Link></button>
+                    <button className="btn btn-light"><Link className="botones" to="/products">Products </Link></button>
+                    <button className="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
                     <button className="btn btn-light"><Link className="botones" to="/show">Show </Link></button>
-                 </div>  
+                   <button className="btn btn-light">
+                    
+                <li type="none"><a className="btn btn-light">Categorías</a>
+                    <ul type="none">
+                        <li><a><button className="btn btn-light">Olympikus</button></a></li>
+                        <li><a><button className="btn btn-light">Adidas</button></a></li>
+                        <li><a><button className="btn btn-light">Diadora</button></a></li>
+                        <li><a><button className="btn btn-light">Umbro</button></a></li>
+                        <li><a><button className="btn btn-light">Athix</button></a></li>
+                        <li><a><button className="btn btn-light">Fila</button></a></li>
+                         
+                    </ul>
+                </li>
+                 
+                </button>
+
+
+                </div>
  
                 <div className="item2" >
                    <Link className="tituloHome" to="/"> <h1 > ALWAYS</h1></Link>

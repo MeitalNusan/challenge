@@ -5,7 +5,7 @@ import { db } from "../../firebase/firebase.js"
 import { imageDb } from "../../firebase/firebase.js"
 import { ref, uploadBytes } from "firebase/storage"
 import { v4 } from "uuid"
-
+ 
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 const mySwal = withReactContent(Swal)
@@ -64,6 +64,46 @@ useEffect(()=>{
 
 
     return (
+      <div>
+        <section className="carousel">
+         <div class="container-lg">
+                <div id="carouselExampleAutoplaying" class="row" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="" height="320px" class="d-block w-100" alt="..."/> 
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        {/* <img src="/img/new-balance.jpg"  height="320px" class="d-block w-100" alt="..."> */}
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        {/* <img src="/img/102660775_560893167960727_5534435715222990990_n.jpg"  height="320px" class="d-block w-100" alt="..."> */}
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        {/* <img src="/img/Olympikus_logo.jpg"  height="320px" class="d-block w-100" alt="..."> */}
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        {/* <img src="/img/logo-athix_ecabcad5-2aa5-45f1-8621-c5befcf1fd8f.jpg"  height="320px" class="d-block w-100" alt="..."> */}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" ></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"  ></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"  ></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+        
+        </div>
+        
+      
+        </div>
+        </section>
+      
         <div className="contenedorGrid">         
         <div className="gridProducts"> 
           {deportes.map((deporte) => (
@@ -86,6 +126,6 @@ useEffect(()=>{
           ))}   
         </div>
       </div>
-      
+      </div>
     )
 } 

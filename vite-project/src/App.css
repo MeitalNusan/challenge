@@ -1,5 +1,5 @@
 #root,html,body{
-  background-image: url("../src/app/img/5779.jpg");  
+  background-image: url("../src/app/img/short.jpg");  
   background-repeat: no-repeat;
   place-items: center;
   min-width: 100%;
@@ -23,7 +23,7 @@ body{
 
 /*..................NAV...................*/
 
-.nav{
+.nav1{
   display: flex;
   justify-content: space-between; 
   
@@ -113,3 +113,36 @@ body{
      
     }
   }
+
+
+ul{
+  height: 50px;
+  /* display: flex;
+  flex-direction:initial;
+  justify-content:space-evenly;
+  font-style:normal; */
+  margin-left: 0px;
+  position: absolute;
+}
+ 
+
+ul li a{
+    font-size:20px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+
+
+li ul{
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    
+}
+
+ li:hover > ul {
+    display: block;
+ }
+
+ 
+ 
