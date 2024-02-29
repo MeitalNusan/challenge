@@ -30,9 +30,9 @@ function Home() {
     <div class="carousel-item active">
       <img class="d-block w-100" src={logoAdidas} alt="First slide"/>
     </div>
-    <div class="carousel-item">
+    {/* <div class="carousel-item">
       <img class="d-block w-100" src={camperaAdidas} alt="Second slide"/>
-    </div>
+    </div> */}
     <div class="carousel-item">
       <img class="d-block w-100" src={pelotaFutbol} alt="Third slide"/>
     </div>
@@ -45,12 +45,12 @@ function Home() {
     <div class="carousel-item">
       <img class="d-block w-100" src={zapaOlym} alt="Third slide"/>
     </div>
-    <div class="carousel-item">
+    {/* <div class="carousel-item">
       <img class="d-block w-100" src={zapaDiadora} alt="Third slide"/>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src={zapaDiadora2} alt="Third slide"/>
-    </div>
+    </div> */}
     {/* <div class="carousel-item">
       <img class="d-block w-100" src={logoAthix} alt="Third slide"/>
     </div> */}
@@ -72,6 +72,9 @@ function Home() {
 </div>
         </section>
       
+      <div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </div>
     </div>
   )
 }
