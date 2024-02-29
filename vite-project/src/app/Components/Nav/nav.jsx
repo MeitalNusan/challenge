@@ -15,16 +15,15 @@ function Nav  () {
         <div className="nav1">
                
                 <div className="item1">
-                    <button className="btn btn-light"><Link className="botones" to="/">Inicio</Link></button>
-                    <button className="btn btn-light"><Link className="botones" to="/products">Products </Link></button>
-                    <button className="btn btn-light"><Link className="botones" to="/create">Crear </Link></button>
-                    <button className="btn btn-light"><Link className="botones" to="/show">Show </Link></button>
-                   <button className="btn btn-light">
+                    <button className="btn btn"><Link className="botones" to="/">Inicio</Link></button>
+                    <button className="btn btn"><Link className="botones" to="/products">Products </Link></button>
+                    <button className="btn btn"><Link className="botones" to="/create">Crear </Link></button>
+                     <button className="btn btn">
                     
-                <li type="none"><a className="btn btn-light">Categorías</a>
+                <li className="botones" type="none"><a>Categorías</a>
                     <ul type="none">
                         <li><a><button className="btn btn-light">Olympikus</button></a></li>
-                        <li><a><button className="btn btn-light">Adidas</button></a></li>
+                        <li><a><button className="btn btn-light"><Link className="btn btn" to="/show">Adidas</Link></button></a></li>
                         <li><a><button className="btn btn-light">Diadora</button></a></li>
                         <li><a><button className="btn btn-light">Umbro</button></a></li>
                         <li><a><button className="btn btn-light">Athix</button></a></li>

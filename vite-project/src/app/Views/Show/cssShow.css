@@ -20,6 +20,8 @@ p{
     height: 300px;
 }
 
+
+
 @media (max-width:600px) {
     .gridProducts{
         margin-top: 10px;
