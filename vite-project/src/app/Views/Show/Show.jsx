@@ -4,9 +4,6 @@ import {collection,getDocs, deleteDoc,doc} from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
-import logoAdidas from "../../img/logoAdidas.jpg"
-import camperaAdidas from "../../img/CamperaAdidas.jpg"
-import pelotaFutbol from "../../img/messiPelota.jpg"
 
 
 const mySwal = withReactContent(Swal)

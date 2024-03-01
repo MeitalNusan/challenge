@@ -9,7 +9,7 @@ const img = "https://neoattack.com/wp-content/uploads/2017/06/carrito-compra-102
 function Nav  () { 
      
     return(
-         
+         <div className="nav-container">
         <nav className="nav1">
                
                 <div className="item1">
@@ -39,7 +39,7 @@ function Nav  () {
                    <Link className="tituloHome" to="/"> <h1 > ALWAYS</h1></Link>
                 </div>
         </nav>
-        
+        </div>
     )
     
 
