@@ -1,0 +1,19 @@
+.carousel{
+    display: flex;
+    height: 968px;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,230px);
+    gap:80px;
+    padding-top: 140px;
+    justify-content: center;
+    
+}
+
+.numero1{   
+    background-color:white;
+}

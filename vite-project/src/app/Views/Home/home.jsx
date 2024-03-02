@@ -21,27 +21,18 @@ function Home() {
     <div>
        <section className="">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
+            
             <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src={logoAdidas} alt="First slide"/>
+              <img class="d-block w-100" src={zapaOlympikus} alt="First slide"/>
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src={pelotaFutbol} alt="Third slide"/>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src={zapaOlympikus} alt="Third slide"/>
+              <img class="d-block w-100" src={pelotaFutbol} alt="Second slide"/>
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src={zapaOlym} alt="Third slide"/>
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src={logoNB} alt="Third slide"/>
-            </div>
+             
             <div class="carousel-item">
               <img class="d-block w-100" src={zapaNB} alt="Third slide"/>
             </div>
@@ -57,8 +48,16 @@ function Home() {
           </div>
         </section>
       
-        <div>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div className='container'>
+          <div className="numero1">
+            
+          </div>
+          <div className="numero1">
+
+          </div>
+          <div className="numero1">
+            
+          </div>        
         </div>
     </div>
   )

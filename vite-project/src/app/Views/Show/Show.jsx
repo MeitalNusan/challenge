@@ -61,10 +61,7 @@ useEffect(()=>{
 
 
 
-    return (
-      <div>
-        
-        <div className="contenedorGrid">         
+    return (       
         <div className="gridProducts"> 
           {deportes.map((deporte) => (
             <div key={deporte.id}>
@@ -85,7 +82,6 @@ useEffect(()=>{
             </div>
           ))}   
         </div>
-      </div>
-      </div>
+     
     )
 } 

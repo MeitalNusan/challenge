@@ -2,16 +2,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fill,230px);
     gap:80px;
-    padding: 40px;
+    padding-top: 140px;
     justify-content: center;
     }
 
-.elementos{
+/* .elementos{
     
     display: flex;
     flex-direction: column;
      
-}
+} */
 
 p{
   font-size: 18px;
