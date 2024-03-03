@@ -60,6 +60,19 @@ function Home() {
           <img  className='zapanb'src={camperaAdidas} alt="" />
         </div>
 
+
+        <div className="conteiner">
+          <div className="numero1">
+          <Link  to="/show" ><img className='img' src={zapaNB} alt="" /></Link>
+          </div>
+          <div className="numero1">
+          <Link  to="/show" ><img className='img' src={zapaOlym} alt="" /></Link>
+          </div>
+          <div className="numero1">
+          <Link  to="/show" ><img className='img' src={zapaDiadora2} alt="" /></Link>
+          </div>
+          
+        </div>
         
     </div>
   )

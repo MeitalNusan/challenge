@@ -8,33 +8,32 @@
 }
 
 .conteiner{
-    height: 500px;
+    height: 600px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill,230px);
-    gap:65px;
+    gap:150px;
     justify-content: center;
+    background-color: white;
 
     
 }
 
 .numero1{   
-    height: 50%;
-    width: 280px;
-    border-radius:10%;
-    border-style: groove;
+    height: 70%;
+    width: 290px;
     border-color: rgb(128, 128, 128);
     margin-top: 100px;
-  
+   
 }
 
  .img{
     width:100%;
     height: 100%;
-    border-radius:10%;
+    border-radius: 6%;
     
  }
- .mediosDePago{
+ /* .mediosDePago{
     height: 100px;
     background-color:rgb(245, 245, 245);
     border-style: groove;
@@ -48,7 +47,7 @@
  }
  .tarjetas:hover{
     filter: grayscale(60%);
-   }
+   } */
    
 .zapa{
     background-color: white;
