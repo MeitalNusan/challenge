@@ -1,0 +1,19 @@
+.footer{
+    position: absolute;
+    margin-bottom: 0;
+    width: 100%;
+    width: 100%; 
+    background-color: white;  
+    z-index: 1000; 
+    height: 150px;
+    display: flex;
+    justify-content: center;
+     margin-top: 20px;
+}
+
+
+.politica{
+   
+    color:black;
+      
+}

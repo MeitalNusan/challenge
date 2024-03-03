@@ -7,6 +7,7 @@ import  "./app/Views/Products/cssGrid.css"
 import  "./app/Views/DetailProduct/cssDetail.css"
 import "./app/Views/Show/cssShow.css"
 import "./app/Views/Home/cssHome.css"
+import "./app/Components/Footer/cssFooter.css"
 
  
 import 'bootstrap/dist/css/bootstrap.min.css'

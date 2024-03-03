@@ -11,12 +11,13 @@
   /*.........BODY........*/
    
 body{
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   background:linear-gradient(to right,rgb(120,110, 110),rgba(0, 0, 0, 0.580),rgba(0, 0, 0, 0.636)); 
- }
+ 
+  }
 
  
- 
+   
 
 /*..................NAV...................*/
 
@@ -56,15 +57,16 @@ li ul{
 }
 
 .nav1{
-   position: absolute;
+   position: fixed;
   top: 0;
   left: 0;
    width: 100%; 
-  background-color: rgba(0, 0, 0, 0.493); /* Set background color as needed */
-  z-index: 1000; /* Adjust the z-index to make sure it's above other elements on the page */
+  background-color: rgba(0, 0, 0, 0.493);  
+  z-index: 1000;  
   display: flex;
   justify-content: space-between;
-  padding: 10px; /* Adjust padding as needed */
+  padding: 10px;  
+  
 }
   
 

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { useState } from 'react'
 
   
-const img = "https://neoattack.com/wp-content/uploads/2017/06/carrito-compra-1024x1024.png"
 
 
 function Nav  () { 
