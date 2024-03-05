@@ -1,0 +1,60 @@
+/*..................NAV...................*/
+
+.nav-container{
+    position: relative;
+  
+      
+  }
+  
+  .nav1{
+     position: fixed;
+    top: 0;
+    left: 0;
+     width: 100%; 
+    background-color: rgba(0, 0, 0, 0.493);  
+    z-index: 1000;  
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;  
+    
+  }
+    
+  
+  
+  .item1{
+    display: flex;
+    gap:100px;
+    margin: 10px;
+    margin-left: 20px;
+    color:black;
+  }
+  .item2{
+    margin-right: 20px;  
+    
+  }
+  .tituloHome{
+     text-decoration: none;
+    /* filter: grayscale(90%); */
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+    
+  }
+  
+  
+  .botones{
+    text-decoration: none; 
+   font-size:larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 10px;
+    color:white;
+  }
+  /* .imgNav{
+    margin-left: 800px;
+    padding: 0;
+    width: 60px;
+    position: absolute;
+    
+  } */
+  
+  

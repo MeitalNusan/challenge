@@ -9,28 +9,62 @@ function Nav  () {
      
     return(
          <div className="nav-container">
-        <nav className="nav1">
-               
+            <nav className="nav1">
+            
                 <div className="item1">
-                    <button className="btn btn"><Link className="botones" to="/">Inicio</Link></button>
-                    <button className="btn btn"><Link className="botones" to="/products">Products </Link></button>
-                    <button className="btn btn"><Link className="botones" to="/create">Crear </Link></button>
-                     <button className="btn btn">
-                    
-                <li className="botones" type="none"><a>Categorías</a>
-                    <ul type="none">
-                        <li><a><button className="btn btn-light">Olympikus</button></a></li>
-                        <li><a><button className="btn btn-light"><Link className="btn btn" to="/show">Adidas</Link></button></a></li>
-                        <li><a><button className="btn btn-light">Diadora</button></a></li>
-                        <li><a><button className="btn btn-light">Umbro</button></a></li>
-                        <li><a><button className="btn btn-light">Athix</button></a></li>
-                        <li><a><button className="btn btn-light">Fila</button></a></li>
-                         
-                    </ul>
-                </li>
-                 
-                </button>
+                  <div class="dropdown">
+           <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="botones">  Mujeres</Link>   </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Ropa deportiva</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Zapatillas</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Bikinis</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Ropa interior</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Botines</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Sandalias</Link></button>
+              </div>
+            </div>
+ 
+            <div class="dropdown">
+           <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="botones">  Hombre</Link>   </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Zapatillas</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Ropa deportiva</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Mallas</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Botines</Link></button>
+              </div>
+            </div>
+ 
+           <div class="dropdown">
+           <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="botones">  Marcas</Link>   </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Adidas</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Diadora</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Olympikus</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Umbro</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Athix</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Fila</Link></button>
+              </div>
+            </div>
+ 
 
+          <div class="dropdown">
+              <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="botones">  Deportes</Link>   </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Futbol</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Running</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Voley</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Tenis</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Natación</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Training</Link></button>
+            </div>
+         </div>
+ 
+      <button className="btn btn"><Link className="botones" to="/create">Crear </Link></button>
+                   
 
                 </div>
  

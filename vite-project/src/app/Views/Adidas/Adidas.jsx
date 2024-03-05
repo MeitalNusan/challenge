@@ -4,11 +4,12 @@ import {collection,getDocs, deleteDoc,doc} from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
+import "../Adidas/cssAdidas.css"
 
 
 const mySwal = withReactContent(Swal)
 
-export const Show = () =>{
+export const Adidas = () =>{
 const [deportes, setDeportes] =useState([])
 
 

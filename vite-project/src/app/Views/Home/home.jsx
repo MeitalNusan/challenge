@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import "../Home/cssHome.css"
 import logoAdidas from "../../img/logoAdidas.jpg"
 import camperaAdidas from "../../img/CamperaAdidas.jpg"
 import pelotaFutbol from "../../img/messiPelota.jpg"
@@ -49,7 +50,22 @@ function Home() {
           </div>
         </section>
       
-
+        <div className="conteiner3">
+          <div className="numero2">
+          <Link  to="/" ><img className='img2' src={logoAdidas} alt="" /></Link>
+          </div>
+          <div className="numero2">
+          <Link  to="/" ><img className='img2' src={logoAthix} alt="" /></Link>
+          </div>
+          <div className="numero2">
+          <Link  to="/" ><img className='img2' src={logoDiadora} alt="" /></Link>
+          </div>
+          <div className="numero2">
+          <Link  to="/" ><img className='img2' src={logoNB} alt="" /></Link>
+          </div>
+          
+        </div>
+        
         <section className='zapa'>
         <button  className="btn btn-danger boton"> DESCUBRI MAS →</button>
           <img className='imgzapa' src={zapaDiadora}  />
@@ -60,19 +76,20 @@ function Home() {
           <img  className='zapanb'src={camperaAdidas} alt="" />
         </div>
 
-
+      
         <div className="conteiner">
           <div className="numero1">
-          <Link  to="/show" ><img className='img' src={zapaNB} alt="" /></Link>
+          <Link  to="/" ><img className='img' src={zapaNB} alt="" /></Link>
           </div>
           <div className="numero1">
-          <Link  to="/show" ><img className='img' src={zapaOlym} alt="" /></Link>
+          <Link  to="/" ><img className='img' src={zapaOlym} alt="" /></Link>
           </div>
           <div className="numero1">
-          <Link  to="/show" ><img className='img' src={zapaDiadora2} alt="" /></Link>
+          <Link  to="/" ><img className='img' src={zapaDiadora2} alt="" /></Link>
           </div>
           
         </div>
+        
         
     </div>
   )

@@ -16,9 +16,8 @@ function Footer  () {
                 <a className="politica" href="" >Contactanos |</a>
             </div>
            <div class="redes">
-                <a class="f" href="https://www.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
-                <a class="i" href="https://www.instagram.com/"><i class='bx bxl-instagram-alt' ></i></a>
-                <a class="t" href="https://www.twitter.com/"><i class='bx bxl-twitter'></i></a>
+                 <a class="i" href="https://www.instagram.com/"><i class='bx bxl-instagram-alt' ></i></a>
+                <a class="w" href="https://www.twitter.com/"><i class='bx bxl-whatsapp'></i></a>
            </div>
         </footer>
         

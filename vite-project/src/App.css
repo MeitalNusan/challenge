@@ -11,7 +11,7 @@
   /*.........BODY........*/
    
 body{
-  filter: grayscale(80%);
+  filter: grayscale(70%);
   background:linear-gradient(to right,rgb(120,110, 110),rgba(0, 0, 0, 0.580),rgba(0, 0, 0, 0.636)); 
  
   }
@@ -73,7 +73,7 @@ li ul{
 
 .item1{
   display: flex;
-  gap:6px;
+  gap:60px;
   margin: 10px;
   margin-left: 20px;
   color:black;
