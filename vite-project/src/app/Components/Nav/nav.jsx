@@ -63,7 +63,16 @@ function Nav  () {
             </div>
          </div>
  
-      <button className="btn btn"><Link className="botones" to="/create">Crear </Link></button>
+         <div class="dropdown">
+              <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="botones">  Crear</Link>   </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome">Crear</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome2">Crear2</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome3">Crear3</Link></button>
+              </div>
+         </div>
+ 
                    
 
                 </div>
