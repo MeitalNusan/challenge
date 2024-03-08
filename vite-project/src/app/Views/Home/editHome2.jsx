@@ -8,7 +8,7 @@ import { db } from "../../firebase/firebase.js"
 export const EditHome2 = () =>{
     
     const [img, setImg] = useState("")
- 
+  
     const navigate = useNavigate()
     const {id} = useParams()
 
@@ -18,9 +18,9 @@ export const EditHome2 = () =>{
         const deporteDoc = await getDoc(doc(db, "imgHome2", id))
 
         if(deporteDoc.exists()){
-            setImg(deporteDoc.data().img)
-            setImg2(deporteDoc.data().img2)
-         }else{
+            setImg(e.target.files[0])
+            // setImg(deporteDoc.data().img)
+          }else{
             console.log("no existe")
 
         }
@@ -47,13 +47,12 @@ const update = async (e) => {
 
     try {
         let imgDataUrl = ""; // Initialize with an empty string
-        let imgDataUrl2 = ""; // Initialize with an empty string
-
+ 
         // Check if img is a valid File object
-        if (img || img2 instanceof File) {
+        if (img  instanceof File) {
             // Convert File to data URL
             imgDataUrl = await convertFileToDataUrl(img);
-         } else {
+          } else {
             // Handle the case where img is not a valid File object
             console.error("Invalid image file");
             // You might want to display an error message to the user or handle it differently
@@ -103,7 +102,7 @@ const convertFileToDataUrl = (file) => {
                             
                         </div>
                         <button type="submit" className="btn btn-primary">Editar</button>
-                       <Link className="btn btn-danger" to="/show">Cancelar</Link>
+                       <Link className="btn btn-danger" to="/">Cancelar</Link>
                     </form>
                 </div>
             </div>

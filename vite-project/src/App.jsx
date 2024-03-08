@@ -10,8 +10,10 @@ import { CreateHome } from "./app/Views/Home/createHome"
 import { EditHome } from "./app/Views/Home/editHome"
 import { EditHome2 } from "./app/Views/Home/editHome2"
 import { EditHome3 } from "./app/Views/Home/editHome3"
+import { EditHome4 } from "./app/Views/Home/editHome4"
 import { CreateHome2 } from "./app/Views/Home/createHome2"
 import { CreateHome3 } from "./app/Views/Home/createHome3"
+import { CreateHome4 } from "./app/Views/Home/createHome4"
  
  
 // import 'bootstrap/dist/css/bootstrap.min.css'
@@ -33,9 +35,11 @@ export const App = () => {
                     <Route path="/editHome/:id" element={<EditHome />} />
                     <Route path="/editHome2/:id" element={<EditHome2 />} />
                     <Route path="/editHome3/:id" element={<EditHome3 />} />
+                    <Route path="/editHome4/:id" element={<EditHome4 />} />
                     <Route path="/createHome" element={<CreateHome />} />
                     <Route path="/createHome2" element={<CreateHome2 />} />
                     <Route path="/createHome3" element={<CreateHome3 />} />
+                    <Route path="/createHome4" element={<CreateHome4 />} />
                    </Route>
             </Routes>
       </BrowserRouter>

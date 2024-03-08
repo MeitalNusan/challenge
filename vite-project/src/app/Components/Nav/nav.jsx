@@ -27,7 +27,7 @@ function Nav  () {
  
             <div class="dropdown">
            <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <Link className="botones">  Hombre</Link>   </button>
+                <Link className="botones">  Hombres</Link>   </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Zapatillas</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Ropa deportiva</Link></button>
@@ -70,6 +70,7 @@ function Nav  () {
               <button className="btn btn-light"><Link className="btn btn" to="/createHome">Crear</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createHome2">Crear2</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createHome3">Crear3</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome4">Crear4</Link></button>
               </div>
          </div>
  

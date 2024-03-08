@@ -33,11 +33,13 @@ const mySwal = withReactContent(Swal)
 const [deportes, setDeportes] =useState([])
 const [deportes2, setDeportes2] =useState([])
 const [deportes3, setDeportes3] =useState([])
+const [deportes4, setDeportes4] =useState([])
 
 
 const homeCollection = collection(db, "imgHome")
 const homeCollection2 = collection(db, "imgHome2")
 const homeCollection3 = collection(db, "imgHome3")
+const homeCollection4 = collection(db, "imgHome4")
 
 const getDeportes = async () =>{
     const data = await getDocs(homeCollection)
@@ -54,6 +56,11 @@ const getDeportes3 = async () =>{
  setDeportes3(
     data.docs.map((doc)=>({...doc.data(),id:doc.id}))
 )}
+const getDeportes4 = async () =>{
+    const data = await getDocs(homeCollection4)
+ setDeportes4(
+    data.docs.map((doc)=>({...doc.data(),id:doc.id}))
+)}
 
 
 const deleteDeportes = async (id) =>{
@@ -64,12 +71,17 @@ const deleteDeportes = async (id) =>{
 const deleteDeportes2 = async (id) =>{
     const deportesDoc = doc(db, "imgHome2", id)
     await deleteDoc(deportesDoc)    
-    getDeportes()
+    getDeportes2()
 }
 const deleteDeportes3 = async (id) =>{
     const deportesDoc = doc(db, "imgHome3", id)
     await deleteDoc(deportesDoc)    
-    getDeportes()
+    getDeportes3()
+}
+const deleteDeportes4 = async (id) =>{
+    const deportesDoc = doc(db, "imgHome4", id)
+    await deleteDoc(deportesDoc)    
+    getDeportes4()
 }
 
 const confirmarDelete = (id) =>{
@@ -132,37 +144,68 @@ const confirmarDelete3 = (id) =>{
         }
       });
     } 
+const confirmarDelete4 = (id) =>{
+    Swal.fire({
+        title: "Estas seguro?",
+        text: "No se podrá revertir",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            deleteDeportes4(id)
+          Swal.fire({
+            title: "Eliminado!",
+            text: "Tu documento ha sido eliminado",
+            icon: "success",
+          });
+        }
+      });
+    } 
 
 
 useEffect(()=>{
     getDeportes()
     getDeportes2()
     getDeportes3()
-},[deportes, deportes2, deportes3])
+    getDeportes4()
+},[deportes, deportes2, deportes3, deportes4])
 
 
 
    return (
     <div>
-       <section>
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img className="d-block w-100" src={zapaOlympikus} alt="First slide"/>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src={pelotaFutbol} alt="Second slide"/>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src={zapaOlym} alt="Third slide"/>
+          <section>
+          {deportes4.map((deporte2) => (
+            <div>
+                  <div key={deporte2.id}>
+                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img class="d-block w-100" src={deporte2.img} alt="First slide" />               
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src={deporte2.img2} alt="Second slide"/>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src={deporte2.img3} alt="Third slide"/>
+                  </div>
+                  
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src={deporte2.img4} alt="Third slide"/>
+                  </div>
+                  
+                                
               </div>
               
-              <div class="carousel-item">
-                <img class="d-block w-100" src={zapaNB} alt="Third slide"/>
               </div>
+              
               </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              
+                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
@@ -170,10 +213,22 @@ useEffect(()=>{
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-          </div>
-        </section>
-      
-        <div className="conteiner3">
+                <div className="edit">
+                <Link to={`/editHome2/${deporte2.id}`} className="btn btn-light">
+                  <i className="fa-solid fa-pen-to-square"></i>
+                </Link>
+                <button className="btn btn-danger" onClick={() => confirmarDelete4(deporte2.id)}>
+                  <i className="fa-solid fa-trash"></i>
+                </button>  
+                </div>
+                </div>
+                
+               ))}  
+              
+                </section>
+                
+          
+            <div className="conteiner3">
           <div className="numero2">
           <Link  to="/" ><img className='img2' src={logoAdidas} alt="" /></Link>
           </div>
@@ -233,18 +288,20 @@ useEffect(()=>{
       
           
 
-<div className='conteiner'>
+<div>
         {deportes3.map((deporte3) => (
-            <div key={deporte3.id}>
-                <div>
-                  <div className="numero1">
-                <img className="img" src={deporte3.img}   />
+            <div className="conteinerGroup" key={deporte3.id}>
+                <div className="numeros">
+                   <img className="img" src={deporte3.img}   />
                 </div>
-                <div className="numero1">
-                <img className="img" src={deporte3.img2}  />
+                <div className="numeros">
+                   <img className="img" src={deporte3.img2}  />
                 </div>
-                <div className="numero1">
-                <img className="img"  src={deporte3.img3}   />
+                <div className="numeros">
+                    <img className="img"  src={deporte3.img3}   />
+                </div>
+                <div className="numeros">
+                    <img className="img"  src={deporte3.img4}   />
                 </div>
                 <div>
                   <Link to={`/editHome3/${deporte3.id}`} className="btn btn-light">
@@ -255,11 +312,13 @@ useEffect(()=>{
                   </button>
                   </div>
                   </div>
-              </div>
-            ))}           
+             ))}           
           </div>
-
+           
+    
     </div>
   )
+
 }
+
 export default Home

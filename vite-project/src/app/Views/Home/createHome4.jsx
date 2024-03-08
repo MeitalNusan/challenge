@@ -8,12 +8,13 @@ import { v4 } from "uuid";
 
  
 
-export const CreateHome3  = () =>{
+export const CreateHome4  = () =>{
 
     const navigate = useNavigate();
     const [urlImDesc, setUrlImDesc] = useState("");
     const [urlImDesc2, setUrlImDesc2] = useState("");
     const [urlImDesc3, setUrlImDesc3] = useState("");
+    const [urlImDesc4, setUrlImDesc4] = useState("");
     const [isLoading, setIsLoading] = useState(false);
   
   
@@ -30,10 +31,11 @@ export const CreateHome3  = () =>{
           img:urlImDesc,
           img2:urlImDesc2,
           img3:urlImDesc3,
+          img4:urlImDesc4,
         };
     
         try {
-          await addDoc(collection(db, "imgHome3"), { ...newD });
+          await addDoc(collection(db, "imgHome4"), { ...newD });
           navigate("/");
         } catch (error) {
           console.error(error);
@@ -47,10 +49,14 @@ export const CreateHome3  = () =>{
         setIsLoading(false);
         // Clear form fields after submission
         setUrlImDesc2("");
-        
+
         setIsLoading(false);
         // Clear form fields after submission
         setUrlImDesc3("");
+
+        setIsLoading(false);
+        // Clear form fields after submission
+        setUrlImDesc4("");
         
        }  
       
@@ -132,6 +138,32 @@ export const CreateHome3  = () =>{
       }
     
     };
+    const fileHandler4 = async (e) => {
+      try {
+        const archivoII = e.target.files[0];
+    
+        // Check if a file is selected
+        if (!archivoII) {
+          console.error("No file selected");
+          return;
+        }
+    
+        // Check if the selected file is an image
+        if (!archivoII.type.startsWith("image/")) {
+          console.error("Invalid file type. Please select an image file.");
+          return;
+        }
+    
+        const refArchivoII = ref(imageDb, `documentos/${archivoII.name}`);
+        await uploadBytes(refArchivoII, archivoII);
+        const imageUrl2 = await getDownloadURL(refArchivoII);
+        setUrlImDesc4(imageUrl2);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        // Handle the error, display a message, etc.
+      }
+    
+    };
     
 
     return(
@@ -153,6 +185,7 @@ export const CreateHome3  = () =>{
             className="form-control"
             onChange={fileHandler2}
             />
+
             <label className="form-label">Agregar Imagen3: </label>
             <input
             type="file"
@@ -161,7 +194,14 @@ export const CreateHome3  = () =>{
             className="form-control"
             onChange={fileHandler3}
             />
-
+            <label className="form-label">Agregar Imagen4: </label>
+            <input
+            type="file"
+            id="file4"
+            placeholder="agregar imagen"
+            className="form-control"
+            onChange={fileHandler4}
+            />
         <button className="btn btn-primary" disabled={isLoading}>
           {isLoading ? "Creating..." : "Crear"}
         </button>      

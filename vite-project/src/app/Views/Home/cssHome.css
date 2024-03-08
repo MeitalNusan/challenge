@@ -9,6 +9,9 @@ body{
     opacity: 0.8;
      
 }
+.edit{
+    background-color: white;
+}
 
 /* .numero1 .img {
     width: 100%;
@@ -16,28 +19,32 @@ body{
     border-radius: 6%;
 } */
 
-.conteiner{
+.conteinerGroup{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill,230px);
-    gap:10px;
-    /* justify-content: center; */
+    grid-template-columns: repeat(auto-fill,210px);
+    gap:100px;
+    justify-content: center;
     background-color: white;
     height: 100%;
+    margin-right: 0px;    
+
+    
 }
 
-.numero1{   
-    height: 20%;
-    width: 50px;
-    border-color: rgb(128, 128, 128);
-    margin-top: 10px;
+.numeros{
+    width: 100%;   
+    /* height: 20%;*/
+     border-color: rgb(128, 128, 128);
+    margin-top: 80px;
+    margin-bottom: 100px;
    
 }
 
  .img{
-     height: 200px;
-     width: 200px;
-    border-radius: 6%;
+    height: 160%;
+    width: 130%;
+    border-radius: 2%;
     
  }
  

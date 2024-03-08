@@ -10,6 +10,7 @@ export const EditHome3 = () =>{
     const [img, setImg] = useState("")
     const [img2, setImg2] = useState("")
     const [img3, setImg3] = useState("")
+    const [img4, setImg4] = useState("")
 
     const navigate = useNavigate()
     const {id} = useParams()
@@ -20,9 +21,11 @@ export const EditHome3 = () =>{
         const deporteDoc = await getDoc(doc(db, "imgHome3", id))
 
         if(deporteDoc.exists()){
-            setImg(deporteDoc.data().img)
-            setImg2(deporteDoc.data().img2)
-            setImg3(deporteDoc.data().img3)
+            setImg(e.target.files[0])
+            setImg2(e.target.files[1])
+            setImg3(e.target.files[2])
+            setImg4(e.target.files[3])
+
          }else{
             console.log("no existe")
 
@@ -52,13 +55,15 @@ const update = async (e) => {
         let imgDataUrl = ""; // Initialize with an empty string
         let imgDataUrl2 = ""; // Initialize with an empty string
         let imgDataUrl3 = ""; // Initialize with an empty string
+        let imgDataUrl4 = ""; // Initialize with an empty string
 
         // Check if img is a valid File object
-        if (img || img2 instanceof File) {
+        if (img || img2 ||img3 || img4 instanceof File) {
             // Convert File to data URL
             imgDataUrl = await convertFileToDataUrl(img);
             imgDataUrl2 = await convertFileToDataUrl(img2);
             imgDataUrl3 = await convertFileToDataUrl(img3);
+            imgDataUrl4 = await convertFileToDataUrl(img4);
         } else {
             // Handle the case where img is not a valid File object
             console.error("Invalid image file");
@@ -69,6 +74,7 @@ const update = async (e) => {
             img: imgDataUrl,
             img2: imgDataUrl2,
             img3: imgDataUrl3,
+            img4: imgDataUrl4,
         };
 
         await updateDoc(deporteDoc, data);
@@ -114,16 +120,23 @@ const convertFileToDataUrl = (file) => {
                                 className="form-control"
                                 type="file"
                             />
-                              <label className="form-label">Imagen3:</label>
+
+                            <label className="form-label">Imagen3:</label>
                             <input
                                 onChange={(e) => setImg3(e.target.files[0])}
+                                className="form-control"
+                                type="file"
+                            />
+                            <label className="form-label">Imagen4:</label>
+                            <input
+                                onChange={(e) => setImg4(e.target.files[0])}
                                 className="form-control"
                                 type="file"
                             />
 
                         </div>
                         <button type="submit" className="btn btn-primary">Editar</button>
-                       <Link className="btn btn-danger" to="/show">Cancelar</Link>
+                       <Link className="btn btn-danger" to="/">Cancelar</Link>
                     </form>
                 </div>
             </div>
