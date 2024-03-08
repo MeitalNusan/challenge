@@ -21,10 +21,10 @@ export const EditHome4 = () =>{
         const deporteDoc = await getDoc(doc(db, "imgHome4", id))
 
         if(deporteDoc.exists()){
-            setImg(e.target.files[0])
-            setImg2(e.target.files[1])
-            setImg3(e.target.files[2])
-            setImg4(e.target.files[3])
+            setImg(deporteDoc.data().img)
+            setImg2(deporteDoc.data().img2)
+            setImg2(deporteDoc.data().img3)
+            setImg2(deporteDoc.data().img4)
 
          }else{
             console.log("no existe")
@@ -101,6 +101,7 @@ const convertFileToDataUrl = (file) => {
     });
 };
 
+
     return (
         <div className="container">
             <h1>Edit</h1>
@@ -116,30 +117,33 @@ const convertFileToDataUrl = (file) => {
                             />
                               <label className="form-label">Imagen2:</label>
                             <input
-                                onChange={(e) => setImg2(e.target.files[0])}
+                                onChange={(e) => setImg2(e.target.files[1])}
                                 className="form-control"
                                 type="file"
                             />
 
                             <label className="form-label">Imagen3:</label>
                             <input
-                                onChange={(e) => setImg3(e.target.files[0])}
+                                onChange={(e) => setImg3(e.target.files[2])}
                                 className="form-control"
                                 type="file"
                             />
                             <label className="form-label">Imagen4:</label>
                             <input
-                                onChange={(e) => setImg4(e.target.files[0])}
+                                onChange={(e) => setImg4(e.target.files[3])}
                                 className="form-control"
                                 type="file"
                             />
 
                         </div>
+                        <div>
                         <button type="submit" className="btn btn-primary">Editar</button>
                        <Link className="btn btn-danger" to="/">Cancelar</Link>
+                       </div>
                     </form>
                 </div>
             </div>
         </div>      
     )
+
 }

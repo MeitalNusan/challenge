@@ -19,10 +19,10 @@ export const EditHome = () =>{
         const deporteDoc = await getDoc(doc(db, "imgHome", id))
 
         if(deporteDoc.exists()){
-            setImg(e.target.files[0])
-            setImg2(e.target.files[1])
-            // setImg(deporteDoc.data().img)
-            // setImg2(deporteDoc.data().img2)
+            // setImg(e.target.files[0])
+            // setImg2(e.target.files[1])
+            setImg(deporteDoc.data().img)
+            setImg2(deporteDoc.data().img2)
          }else{
             console.log("no existe")
 

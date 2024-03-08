@@ -176,58 +176,62 @@ useEffect(()=>{
 
 
    return (
-    <div>
+    <main>
           <section>
-          {deportes4.map((deporte2) => (
-            <div>
-                  <div key={deporte2.id}>
-                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                
+          {deportes4.map((deporte4) => (
+            <div key={deporte4.id}>
+              <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img class="d-block w-100" src={deporte2.img} alt="First slide" />               
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src={deporte2.img2} alt="Second slide"/>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src={deporte2.img3} alt="Third slide"/>
-                  </div>
-                  
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src={deporte2.img4} alt="Third slide"/>
-                  </div>
-                  
-                                
+                  {/* Carousel items */}
+                  {deporte4.img && (
+                    <div className="carousel-item active">
+                      <img className="d-block w-100" src={deporte4.img} alt="First slide" />
+                    </div>
+                  )}
+                  {deporte4.img2 && (
+                    <div className="carousel-item">
+                      <img className="d-block w-100" src={deporte4.img2} alt="Second slide" />
+                    </div>
+                  )}
+                  {deporte4.img3 && (
+                    <div className="carousel-item">
+                      <img className="d-block w-100" src={deporte4.img3} alt="Third slide" />
+                    </div>
+                  )}
+                  {deporte4.img4 && (
+                    <div className="carousel-item">
+                      <img className="d-block w-100" src={deporte4.img4} alt="Fourth slide" />
+                    </div>
+                  )}
+                </div>
+                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
               </div>
-              
-              </div>
-              
-              </div>
-              
-                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-                <div className="edit">
-                <Link to={`/editHome2/${deporte2.id}`} className="btn btn-light">
+
+              {/* Carousel controls */}
+
+             
+
+              {/* Edit buttons */}
+              <div className="edit">
+                <Link to={`/editHome4/${deporte4.id}`} className="btn btn-light">
                   <i className="fa-solid fa-pen-to-square"></i>
                 </Link>
-                <button className="btn btn-danger" onClick={() => confirmarDelete4(deporte2.id)}>
+                <button className="btn btn-danger" onClick={() => confirmarDelete4(deporte4.id)}>
                   <i className="fa-solid fa-trash"></i>
-                </button>  
-                </div>
-                </div>
-                
-               ))}  
+                </button>
+              </div>
+            </div>
+          ))}
+        </section>
               
-                </section>
-                
-          
+        <section> 
             <div className="conteiner3">
           <div className="numero2">
           <Link  to="/" ><img className='img2' src={logoAdidas} alt="" /></Link>
@@ -243,6 +247,7 @@ useEffect(()=>{
           </div>
           
         </div>
+        </section>
         
         <section className='zapa'>
         <button  className="btn btn-danger boton"> DESCUBRI MAS →</button>
@@ -250,7 +255,8 @@ useEffect(()=>{
             <div key={deporte2.id}>
               <div>
                <img className="imgzapa" src={deporte2.img3} />               
-              
+              </div>
+              <div>
                 <Link to={`/editHome2/${deporte2.id}`} className="btn btn-light">
                   <i className="fa-solid fa-pen-to-square"></i>
                 </Link>
@@ -265,30 +271,27 @@ useEffect(()=>{
         
 
         
-        <div className='conteiner2'>
+        <section className='conteiner2'>
         {deportes.map((deporte) => (
             <div key={deporte.id}>
-                <div>
-                <img className="numero" src={deporte.img} alt={`Image for ${deporte.deporte}`} />
+                  <img className="numero" src={deporte.img} alt={`Image for ${deporte.deporte}`} />
                 
-                <img className="numero" src={deporte.img2} alt={`Image for ${deporte.deporte}`} />
-                
-                
-                  <Link to={`/editHome/${deporte.id}`} className="btn btn-light">
+                  <img className="numero" src={deporte.img2} alt={`Image for ${deporte.deporte}`} />
+                   <p><Link to={`/editHome/${deporte.id}`} className="btn btn-light">
                     <i className="fa-solid fa-pen-to-square"></i>
                   </Link>
                   <button className="btn btn-danger" onClick={() => confirmarDelete(deporte.id)}>
                     <i className="fa-solid fa-trash"></i>
                   </button>
-                  </div>
-              </div>
+                  </p> 
+               </div>
             ))}           
-          </div>
+          </section>
 
       
           
 
-<div>
+<section>
         {deportes3.map((deporte3) => (
             <div className="conteinerGroup" key={deporte3.id}>
                 <div className="numeros">
@@ -313,10 +316,10 @@ useEffect(()=>{
                   </div>
                   </div>
              ))}           
-          </div>
+          </section>
            
     
-    </div>
+    </main>
   )
 
 }
