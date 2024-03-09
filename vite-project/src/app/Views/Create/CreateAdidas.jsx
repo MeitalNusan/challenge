@@ -4,8 +4,9 @@ import { collection, addDoc, doc } from "firebase/firestore";
 import { db, imageDb } from "../../firebase/firebase.js";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
+import "../Create/cssCreateAdid.css"
  
-export const Create = () => {
+export const CreateAdidas = () => {
   const navigate = useNavigate();
   const [deporte, setDeporte] = useState("");
   const [marca, setMarca] = useState("");
@@ -17,7 +18,7 @@ export const Create = () => {
   const guardarInfo = async (e) => {
     e.preventDefault();
   
-    if (!deporte || !marca || !prenda) {
+    if (!deporte ) /*agregar || !marca || !prenda */ {
       console.log("Please fill in all fields");
       return;
     }
@@ -25,14 +26,14 @@ export const Create = () => {
     
       const newD = {
         deporte: deporte,
-        marca: marca,
-        prenda: prenda,
+        // marca: marca,
+        // prenda: prenda,
         img:urlImDesc,
       };
   
       try {
-        await addDoc(collection(db, "Deportes"), { ...newD });
-        navigate("/show");
+        await addDoc(collection(db, "Adidas"), { ...newD });
+        navigate("/Adidas");
       } catch (error) {
         console.error(error);
         // Handle error, display a message, etc.
@@ -41,8 +42,8 @@ export const Create = () => {
       setIsLoading(false);
       // Clear form fields after submission
       setDeporte("");
-      setMarca("");
-      setPrenda("");
+      // setMarca("");
+      // setPrenda("");
       setUrlImDesc("");
     }  
     
@@ -75,7 +76,7 @@ export const Create = () => {
   
   return (
     <div>
-       <form onSubmit={guardarInfo}>
+       <form className="conteiner" onSubmit={guardarInfo}>
         <label className="form-label">Deporte:</label>
         <div>
           <input
@@ -88,7 +89,7 @@ export const Create = () => {
           />
         </div>
 
-        <label className="form-label">Marca:</label>
+        {/* <label className="form-label">Marca:</label>
         <div>
           <input
             id="marca"
@@ -98,9 +99,9 @@ export const Create = () => {
             value={marca}
             onChange={(e) => setMarca(e.target.value)}
           />
-        </div>
+        </div> */}
 
-        <label className="form-label">Prenda:</label>
+        {/* <label className="form-label">Prenda:</label>
         <div>
           <input
             id="prenda"
@@ -110,7 +111,7 @@ export const Create = () => {
             value={prenda}
             onChange={(e) => setPrenda(e.target.value)}
           />
-        </div>
+        </div> */}
 
         <label className="form-label">Agregar Imagen: </label>
         <input
@@ -125,7 +126,7 @@ export const Create = () => {
           {isLoading ? "Creating..." : "Crear"}
         </button>      
 
-        <Link className="btn btn-danger" to="/show">
+        <Link className="btn btn-danger" to="/Adidas">
           Cancelar
         </Link>
       </form>

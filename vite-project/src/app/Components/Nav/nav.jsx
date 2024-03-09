@@ -44,7 +44,7 @@ function Nav  () {
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Diadora</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Olympikus</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Umbro</Link></button>
-                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Athix</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Athix">Athix</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Fila</Link></button>
               </div>
             </div>
@@ -71,6 +71,7 @@ function Nav  () {
               <button className="btn btn-light"><Link className="btn btn" to="/createHome2">Crear2</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createHome3">Crear3</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createHome4">Crear4</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createAdidas">Crear Adidas</Link></button>
               </div>
          </div>
  

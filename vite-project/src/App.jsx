@@ -3,14 +3,15 @@ import Home from "./app/Views/Home/home"
 import { Products } from "./app/Views/Products/products"
 import { DetailProduct } from "./app/Views/DetailProduct/DetailProduct"
 import { Layout } from "./app/Components/Layout/Layout"
-import { Adidas } from "./app/Views/Adidas/Adidas"
-import { Create } from "./app/Views/Create/Create"
-import { Edit } from "./app/Views//Edit/Edit"
-import { CreateHome } from "./app/Views/Home/createHome"
+import { Adidas } from "./app/Views/Marcas/Adidas/Adidas"
+import { Athix } from "./app/Views/Marcas/Athix/Athix"
+import { CreateAdidas } from "./app/Views/Create/CreateAdidas"
+import { Edit } from "./app/Views/Create/EditAdidas"
 import { EditHome } from "./app/Views/Home/editHome"
 import { EditHome2 } from "./app/Views/Home/editHome2"
 import { EditHome3 } from "./app/Views/Home/editHome3"
 import { EditHome4 } from "./app/Views/Home/editHome4"
+import { CreateHome } from "./app/Views/Home/createHome"
 import { CreateHome2 } from "./app/Views/Home/createHome2"
 import { CreateHome3 } from "./app/Views/Home/createHome3"
 import { CreateHome4 } from "./app/Views/Home/createHome4"
@@ -30,7 +31,8 @@ export const App = () => {
                     <Route path="/products" element={<Products />} />
                     <Route path="/product/:id" element={<DetailProduct />} />
                     <Route path="/Adidas" element={<Adidas />} />
-                    <Route path="/create" element={<Create />} />
+                    <Route path="/Athix" element={<Athix />} />
+                    <Route path="/createAdidas" element={<CreateAdidas />} />
                     <Route path="/edit/:id" element={<Edit />} />
                     <Route path="/editHome/:id" element={<EditHome />} />
                     <Route path="/editHome2/:id" element={<EditHome2 />} />
