@@ -22,31 +22,30 @@ body{
 .conteinerGroup{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill,210px);
-    gap:100px;
+    grid-template-columns: repeat(auto-fill,220px);
+    gap:160px;
     justify-content: center;
     background-color: white;
-    height: 100%;
-    margin-right: 0px;    
-
+ 
     
 }
 
 .numeros{
-    width: 100%;   
+    width: 90%;   
     /* height: 20%;*/
      border-color: rgb(128, 128, 128);
     margin-top: 100px;
-    margin-bottom: 130px;
+  
+ 
    
 }
 
  .img{
-    height: 160%;
-    width: 130%;
-    border-radius: 2%;
-    
- }
+    height: 450px;
+    width: 300px;
+    border-radius: 1%;
+
+}
  
 .conteiner3{
     height: 400px;

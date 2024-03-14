@@ -30,8 +30,10 @@
   }
   .item2{
     margin-right: 20px;  
-    
+     
   }
+
+  
   .tituloHome{
      text-decoration: none;
     /* filter: grayscale(90%); */
@@ -40,6 +42,12 @@
     font-style: oblique;
     
   }
+
+  .tituloHome:hover{
+    color:rgba(255, 255, 255, 0.384);
+    text-decoration: none;
+   }
+
   
   
   .botones{
@@ -49,12 +57,10 @@
     width: 10px;
     color:white;
   }
-  /* .imgNav{
-    margin-left: 800px;
-    padding: 0;
-    width: 60px;
-    position: absolute;
-    
-  } */
+  
+  .botones:hover{
+    color:rgba(255, 255, 255, 0.384);
+    text-decoration: none;
+   }
   
   

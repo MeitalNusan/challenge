@@ -303,18 +303,18 @@ useEffect(()=>{
                 <div className="numeros">
                     <img className="img"  src={deporte3.img3}   />
                 </div>
-                <div className="numeros">
+                {/* <div className="numeros">
                     <img className="img"  src={deporte3.img4}   />
+                </div> */}
+                   <div>
+                    <Link to={`/editHome3/${deporte3.id}`} className="btn btn-light">
+                      <i className="fa-solid fa-pen-to-square"></i>
+                    </Link>
+                    <button className="btn btn-danger" onClick={() => confirmarDelete3(deporte3.id)}>
+                      <i className="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <Link to={`/editHome3/${deporte3.id}`} className="btn btn-light">
-                    <i className="fa-solid fa-pen-to-square"></i>
-                  </Link>
-                  <button className="btn btn-danger" onClick={() => confirmarDelete3(deporte3.id)}>
-                    <i className="fa-solid fa-trash"></i>
-                  </button>
-                  </div>
-                  </div>
              ))}           
           </section>
            

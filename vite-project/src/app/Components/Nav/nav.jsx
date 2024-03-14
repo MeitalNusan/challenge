@@ -11,6 +11,11 @@ function Nav  () {
          <div className="nav-container">
             <nav className="nav1">
             
+            <div className="item2" >
+                   <Link className="tituloHome" to="/"> <h1 > ALWAYS</h1></Link>
+                </div>
+
+
                 <div className="item1">
                   <div class="dropdown">
            <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,7 +48,7 @@ function Nav  () {
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Adidas</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Diadora</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Olympikus</Link></button>
-                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Umbro</Link></button>
+                  <button className="btn btn-light"><Link className="btn btn" to="/Adidas">New Balance</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Athix">Athix</Link></button>
                   <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Fila</Link></button>
               </div>
@@ -79,9 +84,7 @@ function Nav  () {
 
                 </div>
  
-                <div className="item2" >
-                   <Link className="tituloHome" to="/"> <h1 > ALWAYS</h1></Link>
-                </div>
+                
         </nav>
         </div>
     )
