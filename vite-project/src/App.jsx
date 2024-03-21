@@ -5,8 +5,10 @@ import { DetailProduct } from "./app/Views/DetailProduct/DetailProduct"
 import { Layout } from "./app/Components/Layout/Layout"
 import { Adidas } from "./app/Views/Marcas/Adidas/Adidas"
 import { Athix } from "./app/Views/Marcas/Athix/Athix"
-import { CreateAdidas } from "./app/Views/Create/CreateAdidas"
-import { Edit } from "./app/Views/Create/EditAdidas"
+import { CreateAdidas } from "./app/Views/Create/AdidasCreate/CreateAdidas"
+import { EditAdidas } from "./app/Views/Create/AdidasCreate/EditAdidas"
+import { CreateAthix } from "./app/Views/Create/AthixCreate/CreateAthix"
+import { EditAthix } from "./app/Views/Create/AthixCreate/EditAthix"
 import { EditHome } from "./app/Views/Home/editHome"
 import { EditHome2 } from "./app/Views/Home/editHome2"
 import { EditHome3 } from "./app/Views/Home/editHome3"
@@ -33,7 +35,9 @@ export const App = () => {
                     <Route path="/Adidas" element={<Adidas />} />
                     <Route path="/Athix" element={<Athix />} />
                     <Route path="/createAdidas" element={<CreateAdidas />} />
-                    <Route path="/edit/:id" element={<Edit />} />
+                    <Route path="/editAdidas/:id" element={<EditAdidas />} />
+                    <Route path="/createAthix" element={<CreateAthix />} />
+                    <Route path="/editAthix/:id" element={<EditAthix />} />
                     <Route path="/editHome/:id" element={<EditHome />} />
                     <Route path="/editHome2/:id" element={<EditHome2 />} />
                     <Route path="/editHome3/:id" element={<EditHome3 />} />

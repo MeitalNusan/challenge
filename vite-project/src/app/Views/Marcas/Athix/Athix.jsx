@@ -14,7 +14,7 @@ const [deportes, setDeportes] =useState([])
 
 
 
-const deportesCollection = collection(db, "Deportes")
+const deportesCollection = collection(db, "Athix")
 
 const getDeportes = async () =>{
     const data = await getDocs(deportesCollection)
@@ -24,7 +24,7 @@ const getDeportes = async () =>{
 
 
 const deleteDeportes = async (id) =>{
-    const deportesDoc = doc(db, "Deportes", id)
+    const deportesDoc = doc(db, "Athix", id)
     await deleteDoc(deportesDoc)    
     getDeportes()
 }
@@ -62,7 +62,9 @@ useEffect(()=>{
 
 
 
-    return (       
+    return (     
+       <div>
+        <h1 className="tituloMarca">ATHIX</h1>  
         <div className="gridProducts"> 
           {deportes.map((deporte) => (
             <div key={deporte.id}>
@@ -73,7 +75,7 @@ useEffect(()=>{
               <p>{deporte.prenda}</p>          
               </div>
               <p>
-                <Link to={`/edit/${deporte.id}`} className="btn btn-light">
+                <Link to={`/editAthix/${deporte.id}`} className="btn btn-light">
                   <i className="fa-solid fa-pen-to-square"></i>
                 </Link>
                 <button className="btn btn-danger" onClick={() => confirmarDelete(deporte.id)}>
@@ -83,6 +85,7 @@ useEffect(()=>{
             </div>
           ))}   
         </div>
-     
+        </div>
+             
     )
 } 

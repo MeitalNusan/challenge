@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { collection, addDoc, doc } from "firebase/firestore";
-import { db, imageDb } from "../../firebase/firebase.js";
+import { db, imageDb } from "../../../firebase/firebase.js";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
-import "../Create/cssCreateAdid.css"
+import "../AthixCreate/cssCreateAthix.css"
  
-export const CreateAdidas = () => {
+export const CreateAthix = () => {
   const navigate = useNavigate();
   const [deporte, setDeporte] = useState("");
-  const [marca, setMarca] = useState("");
-  const [prenda, setPrenda] = useState("");
+//   const [marca, setMarca] = useState("");
+//   const [prenda, setPrenda] = useState("");
   const [urlImDesc, setUrlImDesc] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,8 +32,8 @@ export const CreateAdidas = () => {
       };
   
       try {
-        await addDoc(collection(db, "Adidas"), { ...newD });
-        navigate("/Adidas");
+        await addDoc(collection(db, "Athix"), { ...newD });
+        navigate("/Athix");
       } catch (error) {
         console.error(error);
         // Handle error, display a message, etc.
@@ -77,7 +77,8 @@ export const CreateAdidas = () => {
   return (
     <div>
        <form className="conteiner" onSubmit={guardarInfo}>
-        <label className="form-label">Deporte:</label>
+       <h1>Create Athix</h1>
+        <label className="form-label">Modelo:</label>
         <div>
           <input
             id="deporte"
@@ -121,15 +122,16 @@ export const CreateAdidas = () => {
           className="form-control"
           onChange={fileHandler}
         />
-
         <button className="btn btn-primary" disabled={isLoading}>
           {isLoading ? "Creating..." : "Crear"}
         </button>      
 
-        <Link className="btn btn-danger" to="/Adidas">
+        <Link className="btn btn-danger" to="/Athix">
           Cancelar
         </Link>
       </form>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br />
     </div>
   );
 };

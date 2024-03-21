@@ -63,16 +63,12 @@ useEffect(()=>{
 
 
     return (   
-      <>
-      
-        
+      <div>
+        <h1 className="tituloMarca">ADIDAS</h1>
+   
         <div className="gridProducts"> 
-         
-  
-          {deportes.map((deporte) => (
+           {deportes.map((deporte) => (
             <div key={deporte.id}>
-              <Link to="/createAdidas" className="fa-solid fa-pen-to-square">
-         </Link>
               <img className="imgProducts" height={150} width={200} src={deporte.img} alt={`Image for ${deporte.deporte}`} />
               <div className="elementos">
               <p>{deporte.deporte}</p>
@@ -90,6 +86,7 @@ useEffect(()=>{
             </div>
           ))}   
         </div>
-        </>  
+        </div>  
+        
     )
 } 

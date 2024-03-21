@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import { getDoc, updateDoc,doc } from "firebase/firestore"
-import { db } from "../../firebase/firebase.js"
+import { db } from "../../../firebase/firebase.js"
 
 
 
-export const Edit = () =>{
+export const EditAthix = () =>{
     const [deporte, setDeporte] = useState("")
-    const [marca, setMarca] = useState("")
-    const [prenda, setPrenda] = useState("")
+    // const [marca, setMarca] = useState("")
+    // const [prenda, setPrenda] = useState("")
     const [img, setImg] = useState("")
 
     const navigate = useNavigate()
@@ -17,7 +17,7 @@ export const Edit = () =>{
 
 //buscar item por ID en la base de datos
     const getDeportebyId = async (id) =>{
-        const deporteDoc = await getDoc(doc(db, "Adidas", id))
+        const deporteDoc = await getDoc(doc(db, "Athix", id))
 
         if(deporteDoc.exists()){
             setDeporte(deporteDoc.data().deporte)
@@ -47,7 +47,7 @@ const update = async (e) => {
         return;
     }
 
-    const deporteDoc = doc(db, "Adidas", id);
+    const deporteDoc = doc(db, "Athix", id);
 
     try {
         let imgDataUrl = ""; // Initialize with an empty string
@@ -70,7 +70,7 @@ const update = async (e) => {
         };
 
         await updateDoc(deporteDoc, data);
-        navigate("/Adidas");
+        navigate("/Athix");
     } catch (error) {
         // Handle errors, including the conversion error
         console.error("Error updating document:", error);
@@ -94,8 +94,8 @@ const convertFileToDataUrl = (file) => {
 };
 
     return (
-        <div className="container">
-            <h1>Edit</h1>
+        <div className="conteiner">
+            <h1>Edit Athix</h1>
             <div className="row">
                 <div className="col-3">
                     <form onSubmit={update}>
@@ -132,7 +132,7 @@ const convertFileToDataUrl = (file) => {
 
                         </div>
                         <button type="submit" className="btn btn-primary">Editar</button>
-                       <Link className="btn btn-danger" to="/Adidas">Cancelar</Link>
+                       <Link className="btn btn-danger" to="/Athix">Cancelar</Link>
                     </form>
                 </div>
             </div>

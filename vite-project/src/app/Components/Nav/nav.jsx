@@ -77,6 +77,7 @@ function Nav  () {
               <button className="btn btn-light"><Link className="btn btn" to="/createHome3">Crear3</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createHome4">Crear4</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createAdidas">Crear Adidas</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createAthix">Crear Athix</Link></button>
               </div>
          </div>
  
