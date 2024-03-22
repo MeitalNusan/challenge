@@ -4,7 +4,8 @@ import {collection,getDocs, deleteDoc,doc} from "firebase/firestore"
 import { db } from "../../../firebase/firebase.js"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
-import "./cssAdidas.css"
+import "./cssAdidas.css";
+
 
 
 const mySwal = withReactContent(Swal)
@@ -64,7 +65,7 @@ useEffect(()=>{
 
     return (   
       <div>
-        <h1 className="tituloMarca">ADIDAS</h1>
+        <h1 className="tituloAdidas">ADIDAS</h1>
    
         <div className="gridProducts"> 
            {deportes.map((deporte) => (

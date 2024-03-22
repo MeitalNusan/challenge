@@ -9,8 +9,8 @@ import "../AdidasCreate/cssCreateAdid.css"
 export const CreateAdidas = () => {
   const navigate = useNavigate();
   const [deporte, setDeporte] = useState("");
-  const [marca, setMarca] = useState("");
-  const [prenda, setPrenda] = useState("");
+  // const [marca, setMarca] = useState("");
+  // const [prenda, setPrenda] = useState("");
   const [urlImDesc, setUrlImDesc] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,11 +36,9 @@ export const CreateAdidas = () => {
         navigate("/Adidas");
       } catch (error) {
         console.error(error);
-        // Handle error, display a message, etc.
       }
   
       setIsLoading(false);
-      // Clear form fields after submission
       setDeporte("");
       // setMarca("");
       // setPrenda("");

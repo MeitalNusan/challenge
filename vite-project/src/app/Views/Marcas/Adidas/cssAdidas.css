@@ -6,12 +6,12 @@
     justify-content: center;
     }
 
-/* .elementos{
+.elementos{
     
     display: flex;
     flex-direction: column;
      
-} */
+}
 
 p{
   font-size: 18px;
@@ -22,13 +22,13 @@ p{
     margin-top: 240px;
 }
  
-.tituloMarca{
+.tituloAdidas{
     margin-top: 120px;  
     margin-left: 44%;
     font-size: 50px;
     position:absolute;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:rgba(0, 0, 0, 0.644);
+    color:blue;
     animation-name: mover;
     animation-duration: 2s;
     animation-direction: alternate-reverse;

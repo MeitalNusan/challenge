@@ -63,8 +63,8 @@ useEffect(()=>{
 
 
     return (     
-       <div>
-        <h1 className="tituloMarca">ATHIX</h1>  
+       <>
+        <h1 className="tituloAthix">ATHIX</h1>  
         <div className="gridProducts"> 
           {deportes.map((deporte) => (
             <div key={deporte.id}>
@@ -85,7 +85,7 @@ useEffect(()=>{
             </div>
           ))}   
         </div>
-        </div>
+        </>
              
     )
 } 
