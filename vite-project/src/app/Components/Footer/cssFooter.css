@@ -1,6 +1,6 @@
 .footer{
     background-image: url("../src/app/img/short.jpg");  
-    margin-top: 50px;
+    margin-top: px;
      width: 100%;
      filter: grayscale(70%);
     z-index: 1000; 
@@ -18,11 +18,14 @@
   font-size: 15px;
   font-family: 'Times New Roman', Times, serif;
 }
+.politicas{
+  margin-top: 60px;
+}
 .redes{
   display: flex;
 }
 
-.i, .w{
+.i, .w, .t{
   font-size: 30px;
   color:black;
 }
@@ -31,4 +34,7 @@
  }
 .w:hover{
   color:green;
+ }
+.t:hover{
+  color:rgba(0, 0, 255, 0.521);
  }

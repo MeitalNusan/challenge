@@ -5,6 +5,7 @@ import { collection, addDoc, doc } from "firebase/firestore";
 import { db, imageDb } from "../../firebase/firebase.js";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
+import "./cssEdit.css"
 
  
 
@@ -167,6 +168,8 @@ export const CreateHome4  = () =>{
     
 
     return(
+      <>
+      <h1 className="titulo">Create Carousel</h1>
         <div className="createHome">
             <form onSubmit={guardarInfo}>
             <label className="form-label">Agregar Imagen: </label>
@@ -211,6 +214,7 @@ export const CreateHome4  = () =>{
         </Link>
       </form>
     </div>
+    </>
     )
 
 }

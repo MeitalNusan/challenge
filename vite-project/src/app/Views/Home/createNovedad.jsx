@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { collection, addDoc, doc } from "firebase/firestore";
 import { db, imageDb } from "../../firebase/firebase.js";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import "./cssEdit.css"
+
  
  
 
@@ -72,7 +74,9 @@ export const CreateHome2  = () =>{
      
 
     return(
-        <div className="createHome">
+      <>
+      <h1 className="titulo"> Create Novedad</h1>
+        <div className="conteiner">
             <form onSubmit={guardarInfo}>
             <label className="form-label">Agregar Imagen: </label>
             <input
@@ -91,6 +95,7 @@ export const CreateHome2  = () =>{
         </Link>
       </form>
     </div>
+    </>
     )
 
 }

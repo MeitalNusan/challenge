@@ -220,7 +220,7 @@ useEffect(()=>{
 
               {/* Edit buttons */}
               <div className="edit">
-                <Link to={`/editHome4/${deporte4.id}`} className="btn btn-light">
+                <Link to={`/editCarousel/${deporte4.id}`} className="btn btn-light">
                   <i className="fa-solid fa-pen-to-square"></i>
                 </Link>
                 <button className="btn btn-danger" onClick={() => confirmarDelete4(deporte4.id)}>
@@ -257,7 +257,7 @@ useEffect(()=>{
                <img className="imgzapa" src={deporte2.img3} />               
               </div>
               <div>
-                <Link to={`/editHome2/${deporte2.id}`} className="btn btn-light">
+                <Link to={`/editNovedad/${deporte2.id}`} className="btn btn-light">
                   <i className="fa-solid fa-pen-to-square"></i>
                 </Link>
                 <button className="btn btn-danger" onClick={() => confirmarDelete2(deporte2.id)}>
@@ -277,7 +277,8 @@ useEffect(()=>{
                   <img className="numero" src={deporte.img} alt={`Image for ${deporte.deporte}`} />
                 
                   <img className="numero" src={deporte.img2} alt={`Image for ${deporte.deporte}`} />
-                   <p><Link to={`/editHome/${deporte.id}`} className="btn btn-light">
+
+                   <p><Link to={`/editGemelos/${deporte.id}`} className="btn btn-light">
                     <i className="fa-solid fa-pen-to-square"></i>
                   </Link>
                   <button className="btn btn-danger" onClick={() => confirmarDelete(deporte.id)}>
@@ -303,11 +304,8 @@ useEffect(()=>{
                 <div className="numeros">
                     <img className="img"  src={deporte3.img3}   />
                 </div>
-                {/* <div className="numeros">
-                    <img className="img"  src={deporte3.img4}   />
-                </div> */}
                    <div>
-                    <Link to={`/editHome3/${deporte3.id}`} className="btn btn-light">
+                    <Link to={`/edit3Finales/${deporte3.id}`} className="btn btn-light">
                       <i className="fa-solid fa-pen-to-square"></i>
                     </Link>
                     <button className="btn btn-danger" onClick={() => confirmarDelete3(deporte3.id)}>

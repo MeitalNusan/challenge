@@ -16,7 +16,7 @@ function Nav  () {
                 </div>
 
 
-                <div className="item1">
+        <div className="item1">
                   <div class="dropdown">
            <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <Link className="botones">  Mujeres</Link>   </button>
@@ -72,10 +72,10 @@ function Nav  () {
               <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <Link className="botones">  Crear</Link>   </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button className="btn btn-light"><Link className="btn btn" to="/createHome">Crear</Link></button>
-              <button className="btn btn-light"><Link className="btn btn" to="/createHome2">Crear2</Link></button>
-              <button className="btn btn-light"><Link className="btn btn" to="/createHome3">Crear3</Link></button>
-              <button className="btn btn-light"><Link className="btn btn" to="/createHome4">Crear4</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome">Crear Gemelos</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome2">Crear Novedad</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome3">Crear 3 Novedades</Link></button>
+              <button className="btn btn-light"><Link className="btn btn" to="/createHome4">Crear Carousel</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createAdidas">Crear Adidas</Link></button>
               <button className="btn btn-light"><Link className="btn btn" to="/createAthix">Crear Athix</Link></button>
               </div>
@@ -83,7 +83,7 @@ function Nav  () {
  
                    
 
-                </div>
+      </div>
  
                 
         </nav>

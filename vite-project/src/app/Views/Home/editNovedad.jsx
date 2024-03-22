@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import { getDoc, updateDoc,doc } from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
+import "./cssEdit.css"
 
 
 
@@ -87,8 +88,9 @@ const convertFileToDataUrl = (file) => {
 };
 
     return (
-        <div className="container">
-            <h1>Edit</h1>
+        <>
+        <h1 className="titulo">Edit Novedad</h1>
+        <div className="conteiner">
             <div className="row">
                 <div className="col-3">
                     <form onSubmit={update}>
@@ -107,5 +109,6 @@ const convertFileToDataUrl = (file) => {
                 </div>
             </div>
         </div>      
+        </>
     )
 }

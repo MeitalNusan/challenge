@@ -2,15 +2,14 @@ import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import { getDoc, updateDoc,doc } from "firebase/firestore"
 import { db } from "../../firebase/firebase.js"
+import "./cssEdit.css"
 
 
 
-export const EditHome3 = () =>{
+export const EditHome = () =>{
     
     const [img, setImg] = useState("")
     const [img2, setImg2] = useState("")
-    const [img3, setImg3] = useState("")
-    // const [img4, setImg4] = useState("")
 
     const navigate = useNavigate()
     const {id} = useParams()
@@ -18,14 +17,13 @@ export const EditHome3 = () =>{
 
 //buscar item por ID en la base de datos
     const getDeportebyId = async (id) =>{
-        const deporteDoc = await getDoc(doc(db, "imgHome3", id))
+        const deporteDoc = await getDoc(doc(db, "imgHome", id))
 
         if(deporteDoc.exists()){
+            // setImg(e.target.files[0])
+            // setImg2(e.target.files[1])
             setImg(deporteDoc.data().img)
             setImg2(deporteDoc.data().img2)
-            setImg2(deporteDoc.data().img3)
-            // setImg2(deporteDoc.data().img4)
-
          }else{
             console.log("no existe")
 
@@ -49,21 +47,17 @@ const update = async (e) => {
     //     return;
     // }
 
-    const deporteDoc = doc(db, "imgHome3", id);
+    const deporteDoc = doc(db, "imgHome", id);
 
     try {
         let imgDataUrl = ""; // Initialize with an empty string
         let imgDataUrl2 = ""; // Initialize with an empty string
-        let imgDataUrl3 = ""; // Initialize with an empty string
-        // let imgDataUrl4 = ""; // Initialize with an empty string
 
         // Check if img is a valid File object
-        if (img || img2 ||img3 || img4 instanceof File) {
+        if (img || img2 instanceof File) {
             // Convert File to data URL
             imgDataUrl = await convertFileToDataUrl(img);
             imgDataUrl2 = await convertFileToDataUrl(img2);
-            imgDataUrl3 = await convertFileToDataUrl(img3);
-            // imgDataUrl4 = await convertFileToDataUrl(img4);
         } else {
             // Handle the case where img is not a valid File object
             console.error("Invalid image file");
@@ -73,8 +67,6 @@ const update = async (e) => {
         const data = {
             img: imgDataUrl,
             img2: imgDataUrl2,
-            img3: imgDataUrl3,
-            // img4: imgDataUrl4,
         };
 
         await updateDoc(deporteDoc, data);
@@ -102,8 +94,9 @@ const convertFileToDataUrl = (file) => {
 };
 
     return (
-        <div className="container">
-            <h1>Edit</h1>
+        <>
+        <h1 className="titulo">Edit Gemelos</h1>
+        <div className="conteiner">
             <div className="row">
                 <div className="col-3">
                     <form onSubmit={update}>
@@ -121,25 +114,13 @@ const convertFileToDataUrl = (file) => {
                                 type="file"
                             />
 
-                            <label className="form-label">Imagen3:</label>
-                            <input
-                                onChange={(e) => setImg3(e.target.files[0])}
-                                className="form-control"
-                                type="file"
-                            />
-                            {/* <label className="form-label">Imagen4:</label>
-                            <input
-                                onChange={(e) => setImg4(e.target.files[0])}
-                                className="form-control"
-                                type="file"
-                            /> */}
-
                         </div>
                         <button type="submit" className="btn btn-primary">Editar</button>
                        <Link className="btn btn-danger" to="/">Cancelar</Link>
                     </form>
                 </div>
             </div>
-        </div>      
+        </div>
+        </>      
     )
 }
