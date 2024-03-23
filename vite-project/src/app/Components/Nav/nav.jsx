@@ -55,7 +55,7 @@ function Nav  () {
             </div>
  
 
-          <div class="dropdown">
+          {/* <div class="dropdown">
               <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <Link className="botones">  Deportes</Link>   </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -67,7 +67,7 @@ function Nav  () {
               <button className="btn btn-light"><Link className="btn btn" to="/Adidas">Training</Link></button>
             </div>
          </div>
- 
+  */}
          <div class="dropdown">
               <button class="btn btn- dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <Link className="botones">  Crear</Link>   </button>

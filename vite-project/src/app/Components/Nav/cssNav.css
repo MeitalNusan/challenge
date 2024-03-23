@@ -2,12 +2,6 @@
 
 .nav-container{
     position: relative;
-  
-      
-  }
-  
-  .nav1{
-    position:absolute;
     top: 0;
     left: 0;
     width: 100%; 
@@ -15,9 +9,23 @@
     z-index: 1000;  
     display: flex;
     justify-content: space-between;
-    padding: 10px;  
-    
+    padding: 0px;  
+  
+      
   }
+  
+  /* .nav1{
+    /* position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.493);  
+    z-index: 1000;  
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;   
+    
+  } */
     
   
   

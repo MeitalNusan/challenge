@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill,230px);
   gap:80px;
-   
+   margin-top: 100px;
   justify-content: center;
   }
 
@@ -19,14 +19,15 @@ font-size: 18px;
 .imgProducts{
   width: 280px;
   height: 300px;
-  margin-top: 240px;
+  margin-top: 2px;
+  
 }
 
 .tituloAthix{
   margin-top: 120px;  
   margin-left: 44%;
   font-size: 50px;
-  position:absolute;
+  position:relative;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:white;
   animation-name: mover;
